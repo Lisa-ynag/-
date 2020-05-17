@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.mydiv{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+			}
+			.divFont{
+				font-size: 20px;
+				font-weight: bold;
+			}
+		</style>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 
+			v-bind 动态绑定属性
+			语法： v-bind：属性名=“表达式”
+			简写：		:属性名 = “表达式”
+		 -->
+		<div id="box">
+			<!-- 第一种方式，动态绑定属性值 -->
+			<img v-bind:src="imgsrc" >
+			<img :src="imgsrc" >
+			<!-- 第二种方式，根据变量判断动态绑定属性值 v-bind:class="{类名：表达式}" -->
+			<div :class="{mydiv:hasMydiv}">div1</div>
+			<!-- 第三种方式，动态绑定多个样式 -->
+			<div :class="{mydiv:hasMydiv,divFont:hasFont}">div2</div>
+			<!-- 第三种方式-2 -->
+			<div :class="classObj">div3</div>
+			<!-- 第四种方式 -->
+			<div :class="[styleA,styleB]">div4</div>
+			<div :class="[1>1?styleA:'',styleB]">div5</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:"#box",
+			data:{
+				imgsrc:'images/pic.png',
+				hasMydiv:true,
+				hasFont:true,
+				classObj:{
+					"mydiv":true,
+					"divFont":true
+				},
+				styleA:"mydiv",
+				styleB:"divFont"
+			}
+		})
+	</script>
+</html>

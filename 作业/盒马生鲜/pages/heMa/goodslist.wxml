@@ -1,0 +1,14 @@
+<!-- 渲染页面 -->
+
+<view class="goodslistbox" wx:for="{{allgoodsList}}" key="this" bindtap="onclick" >
+	<view class="imgbox"><image src="{{item.image}}" class="listimg"></image></view>
+	<view class="boder">
+    {{item.name}}
+		<view class="texbox">￥
+		<text>
+		{{item.price}}/
+		<text>{{item.unit}}</text>
+		</text>
+		<text class="right" bindtap="toshop" id="{{index}}">+</text></view>
+	</view>
+</view>

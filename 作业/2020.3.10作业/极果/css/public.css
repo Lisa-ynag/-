@@ -1,0 +1,121 @@
+.sizing {
+  box-sizing: border-box;
+}
+.ative{
+	color: #fc6544;
+}
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+.header {
+  padding: 5px 100px;
+  border-bottom: 2px solid #f3f3f3;
+}
+.header .headerbox {
+  overflow: hidden;
+}
+.header .headerbox .headerLeft {
+  float: left;
+  display: flex;
+  width: 60%;
+}
+.header .headerbox .headerLeft a {
+  display: inline-block;
+  flex: 1;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+}
+.header .headerbox .headerLeft .icon {
+  background: url(../image/logonew.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.header .headerbox .hederRight {
+  float: right;
+  width: 20%;
+  display: flex;
+}
+.header .headerbox .hederRight a {
+  display: inline-block;
+  text-align: center;
+}
+.header .headerbox .hederRight a:nth-child(1) span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(../img/search.png) 0 0 no-repeat;
+  background-size: contain;
+  margin-top: 10px;
+}
+.header .headerbox .hederRight a:nth-child(1) span:hover{
+	transform: scale(1.2);
+	transition: all 0.5s;
+}
+.header .headerbox .hederRight a:nth-child(2) {
+  border: 1px solid #fd6541;
+  border-radius: 5px;
+  height: 30px;
+  width: 60px;
+  line-height: 30px;
+  margin-top: 10px;
+  margin-right: 0;
+  color: #fd6541;
+}
+#footer {
+  background-color: #505050;
+  color: #fff;
+  padding: 20px 100px;
+}
+#footer a {
+  color: #fff;
+}
+#footer .footerBox {
+  display: flex;
+}
+#footer .footerBox div h3 {
+  height: 40px;
+}
+#footer .footerBox .iconF {
+  height: 160px;
+}
+#footer .footerBox .iconF img {
+  width: 100%;
+  height: 100%;
+}
+#footer .footerBox div:nth-child(2) {
+  width: 170px;
+}
+#footer .footerBox div:nth-child(2) span {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  background: url(../image/logoImg.jpg) 0 0 no-repeat;
+  background-size: contain;
+}
+#footer .footerBox div:nth-child(2) p {
+  width: 170px;
+  margin-bottom: 20px;
+}
+#footer .footerBox div:nth-child(4) {
+  width: 200px;
+}
+#footer .footerBox div:nth-child(4) ul {
+  overflow: hidden;
+  width: 200px;
+}
+#footer .footerBox div:nth-child(4) ul li {
+  float: left;
+  list-style: none;
+  width: 50%;
+}
+#footer .bootm {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+}

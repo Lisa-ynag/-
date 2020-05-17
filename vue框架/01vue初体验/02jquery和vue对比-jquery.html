@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- <script src="js/jquery-1.11.1.min.js"></script> -->
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<!-- jquery -->
+	<!-- 	<div id="box"></div>
+		
+		<script type="text/javascript">
+			let showBtn = true;
+			if(showBtn){
+				var btn = $("<button>click me</button>");
+				btn.on('click',function(){
+					console.log('点击了')
+				})
+				$('#box').append(btn);
+			}
+		</script> -->
+		<!-- vue -->
+		
+		<div id="box">
+			<button v-if="showBtn" v-on:click="clickme">click me</button>
+		</div>
+			
+			<script type="text/javascript">
+				let vm= new Vue({
+					el:'#box',
+					data:{
+						showBtn:true
+					},
+					methods:{
+						clickme:function(){
+							console.log('点击了')
+						}
+					}
+				})
+			</script>
+	</body>
+</html>

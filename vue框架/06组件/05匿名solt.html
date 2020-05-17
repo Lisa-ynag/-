@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<!--  -->
+		<div id="box">
+			<myheader>
+				<div>
+					我是aaaa
+					<p>
+						段落
+					</p>
+				</div>
+			</myheader>
+			<myheader>
+				<h2>我是bbb</h2>
+			</myheader>
+		</div>
+		<template id="myT">
+			<div>
+				<h1>头部标题</h1>
+				<!-- 定义一个槽口，预留一个接口 只有一个，不要有多个 -->
+				<slot></slot>
+				<p>段落标签</p>
+			</div>
+		</template>
+	</body>
+	<script>
+		let vm = new Vue({
+			el:"#box",
+			data:{
+				
+			},
+			components:{
+				'myheader':{
+					template:'#myT'
+				}
+			}
+		})
+	</script>
+</html>

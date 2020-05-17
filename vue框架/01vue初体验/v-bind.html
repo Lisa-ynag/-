@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+		        <a v-bind:href="URL">我是百度</a>
+		  </div>
+		 
+		<script type="text/javascript">
+			// v-bind:href    绑定一个链接
+			function BindHerf(obj) {
+			    new Vue({
+			        el: obj,
+			        data: {
+			            URL: 'https://www.baidu.com/'
+			        }
+			    })
+			}
+			//调用
+			BindHerf("#box")
+		</script> 
+		
+	</body>
+</html>

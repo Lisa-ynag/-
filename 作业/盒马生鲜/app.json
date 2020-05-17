@@ -1,0 +1,52 @@
+{
+  "pages":[
+   
+    "pages/heMa/index",
+    "pages/heMa/goodslist",
+    "pages/heMa/sort", 
+    "pages/heMa/goodsdetail",
+    "pages/heMa/shopping",
+    "pages/heMa/mine",
+    "pages/demo/demo",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0eb6ff",
+    "navigationBarTitleText": "盒马生鲜",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#ccc",
+    "selectedColor":"#62beff",
+    "list": [
+      {
+        "pagePath": "pages/heMa/index",
+        "iconPath":"./assets/icons/hema.png",
+        "selectedIconPath":"./assets/icons/hema-sel.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/heMa/sort",
+        "iconPath":"./assets/icons/sort.png",
+        "selectedIconPath":"./assets/icons/sort-sel.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/heMa/shopping",
+        "iconPath":"./assets/icons/shopping.png",
+        "selectedIconPath":"./assets/icons/shopping-sel.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/heMa/mine",
+        "iconPath":"./assets/icons/mine.png",
+        "selectedIconPath":"./assets/icons/mine-sel.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

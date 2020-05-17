@@ -1,0 +1,83 @@
+.shoppingWrap{
+  width: 100%;
+ position: relative;
+}
+.shoppingWrap .shoptitle{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: gray;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+.shoppingWrap .shoptitle .right{
+  float: right;
+  margin-right: 20rpx;
+}
+.shoppingWrap .shoplist .item{
+  display: flex;
+  padding: 20rpx;
+ border-bottom: 1px solid #ccc;
+}
+.shoppingWrap .shoplist .item .sicon{
+  width: 120rpx;
+ height: 50rpx;
+ margin-top: 100rpx;
+}
+.shoppingWrap .shoplist .item .sime{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 20rpx;
+}
+.shoppingWrap .shoplist .item .sime image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.shoppingWrap .shoplist .item .sinfo{
+  color: gray;
+}
+.shoppingWrap .shoplist .item .sinfo .price{
+  color: red;
+  margin: 20rpx 0;
+}
+.shoppingWrap .shoplist .item .sinfo .count{
+  float: right;
+}
+.shoppingWrap .shoplist .item .sinfo .count text{
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 50rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+/* 底部 */
+.shoppingWrap .shopping_ft{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  border: 1px solid #ccc;
+  text-align: center;
+  color: #ccc;
+}
+
+.shoppingWrap .shopping_ft .left{
+  color: black;
+  width: 200rpx;
+}
+.shoppingWrap .shopping_ft .left icon{
+  height: 50rpx;
+  /* margin-left: -103rpx; */
+}
+.shoppingWrap .shopping_ft .shoppingsum{
+  width: 420rpx;
+  color: red;
+}
+.shoppingWrap .shopping_ft .buy{
+  background-color: #23a3ff;
+  color: #fff;
+  width: 230rpx;
+}

@@ -1,0 +1,53 @@
+.myh2{
+	text-align: center;
+	padding: 20px 0;
+}
+.titleDiv{
+	text-align: center;
+}
+.titleDiv a{
+	display: inline-block;
+	width: 100px;
+	padding: 10px ;
+}
+.titleDiv .ative{
+	border-bottom: 2px solid #fc6544;
+	color: #fc6544;
+}
+.divbox {
+  height: 100%;
+  padding: 10px 100px;
+  background-color: #f6f6f7;
+}
+.divbox .mydiv{
+	background-color: #fff;
+	padding: 10px 0;
+	margin: 20px 0;
+	border-radius: 5px;
+}
+.divbox .mydiv .title{
+	border-left: 3px solid red;
+	text-indent: 20px;
+}
+.divbox .mydiv .myul{
+	overflow: hidden;
+	padding: 0 20px;
+}
+.divbox .mydiv .myul li{
+	list-style: none;
+	float: left;
+	margin: 20px;
+}
+.divbox .mydiv .myul li a{
+	display: inline-block;
+	width: 150px;
+	text-align: center;
+	color: gray;
+}
+.divbox .mydiv .myul2{
+	/* margin: 10px 20px; */
+	border-top: 1px dashed #ccc;
+}
+.divbox .mydiv .myul2 li{
+	margin: 10px 20px;
+}

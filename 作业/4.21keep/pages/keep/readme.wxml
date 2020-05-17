@@ -1,0 +1,35 @@
+<view class="page-section-spacing">
+  <scroll-view scroll-y="true" style="height: 700px;" >    
+<view class="title">关于我的KEEP</view>
+<view class="text">
+我的KEEP是建立在搞前度循环锻炼基础上的一款健身小程序，本套锻炼安全，高效，主要针对肌肉锻炼和有氧健身。
+</view>
+<view class="text">
+每天您只需要花费几分钟就可以达到调理身体，强健体魄的效果，每个动作60秒。
+</view>
+<view class="text">
+本程序专为时间紧迫的人而研发，男女适用，能帮助他们在任意地方进行短时间的运动健身
+</view>
+<view class="text">
+我的KEEP是建立在搞前度循环锻炼基础上的一款健身小程序，本套锻炼安全，高效，主要针对肌肉锻炼和有氧健身。
+</view>
+<view class="text">
+每天您只需要花费几分钟就可以达到调理身体，强健体魄的效果，每个动作60秒。
+</view>
+<view class="text">
+本程序专为时间紧迫的人而研发，男女适用，能帮助他们在任意地方进行短时间的运动健身
+</view>
+<view class="title">
+锻炼顺序
+</view>
+<view class="text">
+您应该遵循高循环锻炼的顺序，以便于肌肉组在锻炼和休息之间切换
+</view>
+<view class="title">
+锻炼数量
+</view>
+<view class="text">
+建议每次至少做完一套完整锻炼，以便于肌肉组在锻炼和休息之间切换
+</view>
+ </scroll-view>
+</view>

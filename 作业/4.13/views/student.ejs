@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>学生列表</h2>
+		<p>
+			姓名：<input type="text" id ="username" name="username" value="李">
+			<button onclick = "search()">搜索</button>
+		</p>
+		<table border= “1”>
+			<tr><th>序号</th><th>学生姓名</th><th>出生年月</th><th>住址</th><th>操作</th></tr>
+			<%
+				for(let i=0;i<res.length;i++){
+			%>
+			<tr>
+			<td>
+			<%= i+1%>
+			</td>
+				
+			<td>
+			<%= res[i].StudentName%>
+			</td>
+				
+			<td>
+			<%= moment(res[i].BornDate).format("YYYY-MM-DD")%>
+			</td>
+				
+			<td>
+			<%= res[i].Address%>
+			</td>
+				
+			<td>
+				<a href="/editStu?studentno=<%=res[i].StudentNo%>">编辑</a>
+				<a href="JavaScript:del(<%=res[i].StudentNo%>)">删除</a>
+			</td>
+			</tr>
+			<%
+			}
+			%>
+		</table>
+		<script src="/js/jquery-1.11.1.min.js"></script>
+		<script>
+		function search(){
+			location.href='/getStudents?stuname='+$("#username").val();
+		}
+		function del(id){
+			$.ajax({
+				url:"/deleteStu?id="+id,
+				success:function(res){
+					console.log(res);
+					if(res.delstatus==1){
+						alert('删除成功');
+						location.reload();
+					}else{
+						alert('删除失败')
+					}
+				}
+			})
+		}
+		</script>
+	</body>
+</html>

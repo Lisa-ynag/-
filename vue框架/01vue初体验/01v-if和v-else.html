@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+			Vue指令：带有v-前缀的特殊属性
+			例如：v-if,v-else,v-for,v-bind,v-on,v-model...
+			一个标签可以有多个指令，使用空格隔开即可。
+			<input v-if=" "  v-model=""/>
+			
+		 -->
+		 <!-- 
+			v-if="表达式"
+			如果成立true就显示元素，反之false则隐藏元素
+			页面中不会建立标签
+			
+			如果if不成立，则else成立 显示else中的内容
+		  -->
+		<!--  <div id="box">
+			  <h1 v-if="flag">我是一个h1</h1>
+		  </div>
+		  <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		  <script type="text/javascript">
+		  	let vm = new Vue({
+		  					el:'#box',
+		  					data:{
+		  						flag:true
+		  					}
+		  				})
+		  </script> -->
+		  
+		  <div id="box">
+		  	<h1 v-if="flag">我是一个h1</h1>
+			 <h2 v-else>我是一个h2(如果if不成立则else成立)</h2>
+		  </div>
+		  <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		  <script type="text/javascript">
+		  	let vm = new Vue({
+		  					el:'#box',
+		  					data:{
+		  						flag:false
+		  					}
+		  				})
+		  </script>
+		  <!-- v-else -->
+		  
+	</body>
+</html>

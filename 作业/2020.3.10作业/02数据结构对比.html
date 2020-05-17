@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			{
+				//map 和 array
+				//初始化
+				let map = new Map();
+				let arr = [];
+				//增加
+				map.set('temp',10);
+				arr.push({temp:10});
+				console.log(map,arr);
+				//查询  判断是否存在
+				console.log(map.has('temp'));//true
+				let arrvalue = arr.find(item=>item.temp);//find()返回匹配对象
+				console.log(arrvalue)
+				//修改
+				map.set('temp',20);
+				arr.forEach(item=>item.temp?item.temp=20:'');
+				//删除
+				map.delete('temp');
+				let index = arr.findIndex(item=>item.temp);
+				arr.splice(index,1);//splice(起始索引，删除数量)
+				console.log(index);
+				console.log(map,arr);
+			}
+			console.log("----------------------");
+			{
+				//set "唯一性" 和array
+				//初始化
+				let set = new Set();
+				let arr = [];
+				//新增
+				let item = {temp:10};
+				set.add(item);
+				arr.push({temp:10});
+				console.log(set,arr);
+				//查询
+				let setexist=set.has(item);
+				let arrexist = arr.find(item=>item.temp);
+				console.log(setexist,arrexist);
+				//修改
+				//item.temp = 20;
+				set.forEach(item=>item.temp?item.temp=20:'');
+				arr.forEach(item=>item.temp?item.temp=20:'');
+				
+				
+				//删除
+				//先找到item再删除
+				set.forEach(item=>item.temp?set.delete(item):'');
+				let index = arr.findIndex(item=>item.temp);
+				arr.splice(index,1);//splice(起始索引，删除数量)
+				console.log(set,arr)
+			}
+			console.log('---------------------------------')
+			{
+				//set map 和 object
+				//初始化
+				let set = new Set();
+				let map = new Map();
+				let obj = {};
+				//增加
+				let item = {temp:10};
+				set.add(item);
+				map.set('temp',10);
+				obj['temp'] = 10;
+				console.log(set,map,obj)
+				//查询
+				console.log(set.has(item))
+				console.log(map.has('temp'))
+				console.log('temp'in obj)
+				//修改
+				item.temp = 20;//set
+				//set.forEach(item=>item.temp?item.temp=20:'');
+				map.set('temp',20);//map
+				obj['temp'] = 20;
+				console.log(set,map,obj)
+				//删除
+				set.delete(item);
+				//set.forEach(item=>item.temp?set.delete(item):'');
+				map.delete('temp');
+				delete obj['temp'];
+				console.log(set,map,obj)
+			}
+		</script>
+	</body>
+</html>

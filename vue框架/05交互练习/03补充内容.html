@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- v-cloak:解决页面闪烁
+			v-text :没有闪烁问题，解析内容
+			v-html：解析标签内容
+			v-once: 只更新一次，后续不会在更新，，提高更新性能
+			-->
+	</head>
+	<body>
+		<div id="box">
+			<!-- v-cloak 解决页面闪烁问题 -->
+			<h1 v-cloak>消息{{msg}}</h1>
+			<!-- v-text :没有闪烁问题，解析内容 -->
+			<h1 v-text="msg">消息：</h1>
+			————————————————————————————————————————————————
+			<div>
+				{{val}}
+			</div>
+			<div v-text="val"></div>
+			<div v-html="val"></div>
+			----------------------------------------------
+			<div v-once>{{oneval}}</div>
+			<div>{{oneval}}</div>
+			<input type="text" v-model="oneval">
+		</div>
+	</body>
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:"#box",
+			data:{
+				msg:"hello",
+				val:"<h3>我是h3</h3>",
+				oneval:'temp'
+			}
+		})
+	</script>
+</html>

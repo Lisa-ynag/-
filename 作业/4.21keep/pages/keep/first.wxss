@@ -1,0 +1,11 @@
+image{
+  width: 100%;
+}
+page button.btn{
+  width: 90%;
+  height: 100rpx;
+  line-height: 80rpx;
+ margin: 35rpx auto;
+ background-color: #5a4f60;
+ color: #fff;
+}

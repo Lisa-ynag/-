@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				list-style: none;
+				border: 1px solid #ccc;
+				padding: 0 20px;
+			}
+		</style>
+		<script src="js/vue.js"></script>
+		<script src="js/axios.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/loading.jpg" v-show="isShow" >
+			<ul>
+				<li v-for="item in commentList">
+					<h4>{{item.commentTxt}}</h4>
+					<p>{{item.createAt | fmtDate}}</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		let vm = new Vue({
+					el: "#box",
+					data: {
+						commentList: [],
+						isShow:true
+					},
+					filters:{
+						fmtDate:function(val){
+							return val.substr(0,10);
+						}
+					},
+					mounted: function() {
+						axios.get(
+							'http://api.artgoer.cn:8084/artgoer/api/v1/user/324380/v3/topic/topicHomeByLabel?pageIndex=1&token=b544cd63-6d42-46fe-a96c-3cf96bae3113&topicId=62187')
+							.then(res => {
+								this.isShow = false;
+								console.log(res.data.data.commentList);
+								this.commentList = res.data.data.commentList;
+							})
+							.catch(err=>{
+								console.log(err)
+							})
+						}
+					})
+	</script>
+</html>

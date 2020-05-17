@@ -1,0 +1,27 @@
+/* pages/apidemo2/apidemo2.wxss */
+.page-section-spacing{
+  margin-top: 60rpx;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 100%;
+  height: 300rpx;
+}
+#demo1{
+  background-color:#66CCFF;
+}
+#demo2{
+  background-color: yellowgreen;
+}
+#demo3{
+  background-color: pink;
+}
+view{
+  width: 100%;
+}

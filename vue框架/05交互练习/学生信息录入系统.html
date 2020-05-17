@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0auto;
+				padding: 0;
+			}
+
+			#box {
+				width: 900px;
+			}
+
+			fieldset {
+				padding: 20px;
+				border: 2px solid #40acc7;
+			}
+
+			select {
+				padding: 3px 0;
+			}
+
+			.btmbox ul {
+				border: 2px solid #40acc7;
+			}
+
+			.btmbox ul li {
+				display: flex;
+				list-style: none;
+				margin: 0;
+				padding: 10px 20px;
+			}
+
+			span {
+				flex: 1;
+			}
+
+			.btmbox .tieli {
+				background-color: #40acc7;
+				color: #fff;
+			}
+
+			button {
+				background-color: #40ACC7;
+				color: #fff;
+				padding: 0 20px;
+				line-height: 30px;
+				border-radius: 5px;
+				border: none;
+			}
+
+			.txt {
+				color: red;
+			}
+		</style>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<fieldset>
+				<legend>学生信息录入系统</legend>
+				<p>姓名：
+					<input type="text" v-model="newPerson.name" @input="input()" />
+					<span v-show="showname" class="txt">4到16位（数字，字母，下划线）</span>
+				</p>
+				<p>年龄：
+					<input type="tex" v-model="newPerson.age" />
+					<span v-show="showAge" class="txt">年龄格式错误</span>
+				</p>
+				<p>性别：
+					<select name="" v-model="newPerson.gender">
+						<option value="男">男</option>
+						<option value="女">女</option>
+					</select>
+					<p>
+						<p>
+							手机：<input type="text" v-model="newPerson.tel" />
+							<span v-show="showTel" class="txt">手机号码格式不正确</span>
+						</p>
+					</p>
+					<p>
+						<button type="button" @click="createNewPerson">创建新用户</button>
+					</p>
+			</fieldset>
+			<div class="btmbox">
+				<ul>
+					<li class="tieli"><span>姓名</span><span>性别</span><span>年龄</span><span>手机</span><button>删除</button></li>
+					<li v-for="(item,index) in persons">
+						<span>{{item.name}}</span>
+						<span>{{item.gender}}</span>
+						<span>{{item.age}}</span>
+						<span>{{item.tel}}</span>
+						<button @click="delPerson(index)">删除</button>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el: '#box',
+			data: {
+				persons: [{
+						name: '方君昊',
+						age: 20,
+						gender: '男',
+						tel: '15473124380	'
+					},
+					{
+						name: '乔向雁',
+						age: 22,
+						gender: '女	',
+						tel: '15373124380	'
+					},
+					{
+						name: '鲁傲柔',
+						age: 23,
+						gender: '男',
+						tel: '15273124380	'
+					},
+					{
+						name: '寸琴韵',
+						age: 21,
+						gender: '女	',
+						tel: '15173124380'
+					}
+				],
+				newPerson: {
+					name: '',
+					age: 0,
+					gender: '男',
+					tel: '',
+				},
+				showname: false,
+				showAge: false,
+				showTel: false
+			},
+			methods: {
+				createNewPerson() {
+					let regName = /^[a-zA-z]\w{4,16}$/;
+					let regTel = /^[1][3,4,5,7,8][0-9]{9}$/;
+					let regAge = /^(?:[1-9][0-9]?|1[01][0-9]|100)$/;
+					//验证
+					if (this.newPerson.name == '') {
+						alert('姓名不能为空');
+						return;
+					}else if (!regName.test(this.newPerson.name)) {
+						this.showname = true;
+						return;
+					} else if (this.newPerson.age == '') {
+						alert('年龄不能为空');
+						return;
+					} else if (!regAge.test(this.newPerson.age)) {
+						this.showAge = true;
+						return;
+					} else if (this.newPerson.gender == '') {
+						alert('性别不能为空');
+						return;
+					} else if (this.newPerson.tel == '') {
+						alert('手机号码不能为空');
+						return;
+					} else if (!regTel.test(this.newPerson.tel)) {
+						this.showTel = true;
+						return;
+					} else {
+						alert('创建成功')
+					}
+					//插入
+					this.persons.push(this.newPerson);
+					//清空
+					this.newPerson = {
+						name: '',
+						age: '',
+						gender: '',
+						tel: ''
+					}
+				},
+				delPerson(index) {
+					this.persons.splice(index, 1)
+				},
+				// input() {
+				// 	this.isShow = true
+				// }
+			}
+
+		})
+	</script>
+</html>

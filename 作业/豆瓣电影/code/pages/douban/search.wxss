@@ -1,0 +1,31 @@
+/* pages/douban/list.wxss */
+.movieslist .moviesbox{
+  display: flex;
+  padding: 20rpx;
+}
+
+.movieslist .movieimg{
+  width: 180rpx;
+  height: 200rpx;
+  border: 4rpx solid #7e140f;
+}
+.movieslist .movietitle{
+  width: 429rpx;
+  position: relative;
+  margin: 0 20rpx;
+}
+.movieslist .movietitle .tilieTwo{
+  color: gray;
+}
+.movieslist .movietitle .bootm{
+  position: absolute;
+  bottom: 0rpx;
+}
+.weui-cell__bd{
+  position: relative;
+}
+.weui-cell__bd .weui-badge{
+  position: relative;
+  right: 0;
+  top: 50rpx;
+}

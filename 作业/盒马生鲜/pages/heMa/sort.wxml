@@ -1,0 +1,23 @@
+<swiper indicator-dots="true" autoplay="true" interval="3000" bindtap="onstart">
+	<swiper-item class="box">
+		<image src="https://gw.alicdn.com/tfs/TB1AoIXeLDH8KJjy1XcXXcpdXXa-750-291.jpg_Q90.jpg" mode="widthFix" class="img"></image>
+	</swiper-item>
+	<swiper-item class="box">
+		<image src="https://img.alicdn.com/imgextra/i1/771510470/TB21SB0fIbI8KJjy1zdXXbe1VXa-771510470.jpg_Q90.jpg" mode="widthFix" class="img"></image>
+	</swiper-item>
+	<swiper-item class="box">
+		<image src="https://img.alicdn.com/imgextra/i2/745949152/TB2ATrSexPI8KJjSspfXXcCFXXa_!!745949152.jpg_Q90.jpg" mode="widthFix" class="img"></image>
+	</swiper-item>
+	<swiper-item class="box">
+		<image src="https://img.alicdn.com/imgextra/i2/745949152/TB2ATrSexPI8KJjSspfXXcCFXXa_!!745949152.jpg_Q90.jpg" mode="widthFix" class="img"></image>
+	</swiper-item>
+</swiper>
+
+<view class="weui-flex">
+	<view class="weui-flex__item" wx:for="{{allSort}}" key="this">
+		<view class="placeholder">
+			<image src="{{item.imageSrc}}"></image> 
+      <view>{{item.text}}</view>
+		</view>
+	</view>
+</view>

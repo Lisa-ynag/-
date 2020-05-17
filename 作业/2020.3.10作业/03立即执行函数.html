@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+			什么是立即执行函数？
+			声明一个函数，并马上调用这个匿名函数就叫立即执行函数
+			1.声明匿名函数2.使用（）包起来 3.执行函数
+			 */
+			(
+			function(){
+				console.log(1);
+			}
+			)();//1
+			//语法不允许。function出现在首页时会认为是函数的定义
+			/* function fn1(){
+				console.log('demo01');
+			}(); */
+			//将其变成表达式方式时，就可以立即执行函数。（）
+			let fn2 = function(){
+				console.log(2);
+			}();
+			
+			(
+			function(){
+				console.log('demo1');
+			}
+			)();
+			
+			(
+			function(){
+				console.log('demo2');
+			}()
+			);
+			
+			//传参
+			(
+			function(a,b){
+				console.log(a+b);//30
+			}
+			)(10,20);
+			
+			!function(){
+				console.log('demo3');
+			}();
+			
+			
+			+function(){
+				console.log('demo4');
+			}();
+			-function(){
+				console.log('demo5');
+			}();
+			void function(){
+				console.log('demo6');
+			}();
+			new function(){
+				console.log('demo7');
+			}();
+			~ function(){
+				console.log('demo8');
+			}();
+		</script>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<script type="text/javascript">
+			var lis = document.getElementsByTagName("li");
+			/* for(var i = 0;i<lis.length;i++){
+				lis[i].onclick = function(){
+					console.log(i);
+				}
+			} */
+			//问题：点击任何一个li 输出的都是3
+			// for(let i = 0;i<lis.length;i++){
+			// 	lis[i].tempi = i;
+			// 	lis[i].onclick = function(){
+			// 		console.log(this.tempi);
+			// 	}
+			// }
+			
+			//let 
+			// for(let i = 0;i<lis.length;i++){
+			// 	lis[i].onclick = function(){
+			// 		console.log(i);
+			// 		}
+			// 	}
+			
+			//立即执行函数
+			for(var i = 0;i<lis.length;i++){
+				(function(id){
+					lis[i].onclick = function(){
+						console.log(id);
+						}
+				})(i);
+				
+				}
+				//立即执行函数一般是用在初始化函数当中。
+		</script>
+	</body>
+</html>

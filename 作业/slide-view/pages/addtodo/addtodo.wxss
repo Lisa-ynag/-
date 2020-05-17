@@ -1,0 +1,18 @@
+.container{
+  padding: 30rpx;
+}
+.container .todo{
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20rpx;
+}
+.container .todo view{
+ margin: 20rpx 0;
+}
+.container .mybtn{
+  width: 80%;
+  border-radius: 25rpx;
+  color: #fff;
+  background-color: #00b26a;
+  margin-top: 50rpx;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>学员编辑</h2>
+		<form action="/updateStudent">
+			<p>学生编号：<input type="text" name="StudentNo" value="<%=studentobj.StudentNo%>"></p>
+			<p>学生姓名：<input type="text" name="StudentName" value="<%=studentobj.StudentName%>"></p>
+			<p>学生性别：<input type="text" name="Sex" value="<%=studentobj.Sex%>"></p>
+			<p>学生住址：<input type="text" name="Address" value="<%=studentobj.Address%>"></p>
+			<p>Email：<input type="text" name="Email" value="<%=studentobj.Email%>"></p>
+			<p><input type="submit" value="修改"></p>
+		</form>
+	</body>
+</html>

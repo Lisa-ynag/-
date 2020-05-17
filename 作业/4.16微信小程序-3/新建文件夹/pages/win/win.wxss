@@ -1,0 +1,14 @@
+
+image{
+  width: 100%;
+
+}
+view{
+  position: relative;
+}
+open-data{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 510rpx;
+}

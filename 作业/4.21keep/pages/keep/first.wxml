@@ -1,0 +1,4 @@
+<view>
+<image src="../../assets/images/banner.jpeg"></image>
+<button bindtap="onStart" class="btn">马上开始</button>
+</view>

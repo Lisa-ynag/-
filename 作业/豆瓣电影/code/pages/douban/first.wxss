@@ -1,0 +1,12 @@
+/* pages/douban/first.wxss */
+swiper{
+  height: 1300rpx;
+}
+/* .box{
+  width: 100%;
+  height: 100%;
+} */
+.img{
+  width: 100%;
+  height: 100%;
+}

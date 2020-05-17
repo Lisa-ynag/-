@@ -1,0 +1,5 @@
+<swiper indicator-dots="true" autoplay="true" interval="3000" bindtap="onstart">
+<swiper-item wx:for="{{movies}}" wx:key="id" class="box">
+<image src="{{item.images.small}}" mode="widthFix" class="img"></image>
+</swiper-item>
+</swiper>

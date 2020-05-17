@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="/loadFile" enctype="multipart/form-data" method="post">
+				<input type="file" name="pic">
+				<select name="xiangce" id="chooseAlbum"></select>
+				<input type="submit" value="上传">
+			</form>
+			<script src="./js/jquery-1.11.1.min.js"></script>
+			<script type="text/javascript">
+				function loadChoose(){
+					let op="";
+					$.ajax({
+						url:"http://localhost:3000/findAlbum",
+						type:"get",
+						data:{},
+						dataType:"json",
+						success(dt){
+							dt.forEach((item,index)=>{
+								op+="<option name=xiangce value="+item.from+" >"+item.from+"</option>"
+							})
+							$("#chooseAlbum").html(op);
+						}
+					})
+					
+				}
+				//网页载入时加载
+				$(function(){
+					loadChoose();
+				})
+			</script>
+		
+	</body>
+</html>

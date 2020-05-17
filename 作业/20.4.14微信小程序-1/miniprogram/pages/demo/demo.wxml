@@ -1,0 +1,24 @@
+<!--pages/demo/demo.wxml-->
+<text>demo页面1</text><text>demo页面2</text>
+
+<view>我是view标签，我独占一行</view>
+<view>我是view标签，我独占一行</view>
+
+<view>显示data数据：{{mydata}}</view>
+<!-- 点击事件 -->
+<button bindtap="clickMe">点击我</button>
+
+<!-- 判断 -->
+<view wx:if="{{2>1}}"> 1111 </view>
+<!-- block -->
+<block wx:if="{{true}}">
+  <view>v1</view>
+  <view>v222</view>
+</block>
+
+<!-- 遍历 -->
+<text wx:for="{{arr}}">{{item}}</text>
+ 
+ <view wx:for="{{proarr}}">
+ {{item.proname}} - {{item.price}}
+ </view>

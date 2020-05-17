@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.mydiv{
+				height: 100px;
+				width: 100px;
+				background-color: pink;
+			}
+		</style>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 
+			v-on指令：绑定事件
+			语法：v-on:事件名 = “函数名（）”
+			简写：@事件名=“函数名”
+		 -->
+		<div id="box">
+			<button type="button" v-on:click="fn1">点击我</button>
+			<button type="button" v-on:click="fn2('msg')">点击我2</button>
+			<div class="mydiv" v-show="isShow"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:'#box',
+			//变量数据
+			data:{
+				isShow:false
+			},
+			//函数定义在methods属性中
+			methods:{
+				fn1:function(){
+					this.isShow=!this.isShow;
+					console.log(111)
+				},
+				fn2:function(data){
+					console.log('fun2:',data);
+				}
+			}
+		})
+	</script>
+</html>

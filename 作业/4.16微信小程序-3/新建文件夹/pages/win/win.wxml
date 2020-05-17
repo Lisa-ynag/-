@@ -1,0 +1,5 @@
+<view>
+<image src="../../images/win.jpg" mode="widthFix"></image>
+<open-data type="userAvatarUrl">
+</open-data>
+</view>

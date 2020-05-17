@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul class="ullist">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	<script type="text/javascript">
+		/* 正常情况 */
+		let liDoms = document.getElementsByTagName('li');
+		/* 如果说网页中可能还需要获取其它更多标签 */
+		console.log(liDoms);
+		// 封装
+		function getTag(tagname){
+			return document.getElementsByTagName(tagname);
+		}
+		console.log(getTag('li'))
+		// 封装2
+		function getTag2(tagname){
+			// 初始化getTag2.obj用来缓存已经读取过了的DOM元素
+			if(!getTag2.obj){
+				getTag2.obj={};
+			}
+			/* if(getTag2.obj[tagname]!=null){
+				return getTag2.obj[tagname];
+			}else{
+				getTag2.obj[tagname] = document.getElementsByTagName(tagname);
+				return getTag2.obj[tagname];
+			} */
+			return getTag2.obj[tagname] = getTag2.obj[tagname] || document.getElementsByTagName(tagname);
+			/* 
+			1.判断getTag2.obj[tagname]是否有值，如果没有，取||右边的内容
+			2.将结果赋值给getTag2.obj[tagname 进行缓存
+			 */
+		}
+		console.log(getTag2('li'))
+		console.log(getTag2('li'))
+	</script>
+	</body>
+</html>

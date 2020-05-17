@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div onclick="fn1();fn2();" id="box">
+			点击我
+		</div>
+		<script type="text/javascript">
+			/* 
+			DOM0级
+			缺点：同一种类型 同一种标签 只能够绑定一次这种事件！
+			   都是冒泡
+			DOM2级
+			解决：同一种类型  同一种标签  可以绑定多次事件，不会覆盖前面的事件
+					可以设置冒泡或者捕获
+			 */
+			function fn(){
+				console.log('fn1')
+			}
+			function fn(){
+				console.log('fn2')
+			}
+			let boxDom = document.getElementById('box');
+			boxDom.onclick = function(){
+				console.log('fn3');
+			}
+			boxDom.onclick = function(){
+				console.log('fn4');
+			}
+			boxDom.addEventListener('click',function(){
+				console.log('addfn5')
+			},false);
+			boxDom.addEventListener('click',function(){
+				console.log('addfn6')
+			},false);
+			
+		</script>
+	</body>
+</html>

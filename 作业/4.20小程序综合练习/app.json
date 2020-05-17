@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/apidemo/apidemo",
+    "pages/apidemo3/apidemo3",
+    "pages/apidemo2/apidemo2",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "style":"v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "",
+    "selectedColor": "#cb0000",
+    "borderStyle": "black",
+    "backgroundColor":"#2782d7",
+    "list": [{
+        "selectedIconPath": "",
+        "iconPath": "",
+        "pagePath": "pages/apidemo/apidemo",
+        "text": "apidemo"
+      },
+      {
+        "selectedIconPath": "",
+        "iconPath": "",
+        "pagePath": "pages/apidemo2/apidemo2",
+        "text": "apidemo2"
+      },
+      {
+        "selectedIconPath": "",
+        "iconPath": "",
+        "pagePath": "pages/apidemo3/apidemo3",
+        "text": "apidemo3"
+      }
+    ]
+  }
+}

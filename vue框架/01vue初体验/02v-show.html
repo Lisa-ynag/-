@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+			Vue指令：带有v-前缀的特殊属性
+			例如：v-if,v-else,v-for,v-bind,v-on,v-model...
+			一个标签可以有多个指令，使用空格隔开即可。
+			<input v-if=" "  v-model=""/>
+			
+		 -->
+		 <!-- 
+			v-show="表达式"
+			如果成立true就显示，反之false则隐藏
+			(false情况，页面中会创建标签，并且设置display:none)
+		  -->
+		  
+		  <div id="box">
+		  	<h1 v-show="flag">我是一个h1</h1>
+		  </div>
+		  <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		  <script type="text/javascript">
+		  	let vm = new Vue({
+		  					el:'#box',
+		  					data:{
+		  						flag:true
+		  					}
+		  				})
+		  </script>  
+		  <!-- 
+			v-if和v-show的区别？
+				当为false情况时，v-if不会创建标签，v-show会创建标签同时设置diaplay属性
+				相比下，v-if会频繁的创建标签和删除标签，切换消耗更高。
+				而v-show只是简单的设置样式的显示和隐藏
+				因此，如果页面中需要频繁的设置显示跟隐藏 首选v-show
+				如果只是一次性控制元素的显示和隐藏则 选用v-if
+		   -->
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>EJS模板</h1>
+		姓名：<%=person.name %>
+			<br/>
+		年龄：<%=person.age %>
+		<ul>
+			<%
+			for(let i=0;i<arr.length;i++){
+				
+			%>
+			<li>
+			<%=arr[i].proname%> <%=arr[i].price%>
+			</li>
+			<%
+			}
+			%>
+		</ul>
+	</body>
+</html>

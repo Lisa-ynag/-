@@ -1,0 +1,27 @@
+
+<view class="container">
+  <!-- 播放器 -->
+    <view class="musicbox">
+    <!-- 歌曲名称 -->
+    <text class="mtitle">未知歌曲·未知作者</text>
+    <!-- 歌曲右侧播放 -->
+        <view class="mimgs" bindtap="audioplay">
+        <image src="../../images/music.png" class="musicbg"></image>
+        <image src="{{isplay?'../../images/stop.jpg':'../../images/start.jpg'}}" class="musicbtn"></image>
+        </view>
+    </view>
+  <!-- 猜字区 -->
+  <view class="inputgroup">
+      <input type="text" disabled="true" id="{{index}}" wx:for="{{titles}}" value="{{titles[index]}}" bindtap="cleartxt" class="wordname" wx:key="index"/>
+  </view>
+  <!-- 关键字 -->
+  <view class="content">
+      <view class="btn" wx:for="{{allmusic[currIndex].keyword}}" hover-class="btnhover" wx:key="index" bindtap="getitem" id="{{index}}">{{item}}</view>
+      
+  </view>
+  <!-- SOS -->
+  <view class="footer">
+    <text>太难了，邀请好友助力</text>
+    <button class="sos" type="warn" open-type="share" >SOS</button>
+  </view>
+</view>

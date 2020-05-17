@@ -1,0 +1,47 @@
+<!--pages/demo2/demo2.wxml-->
+<!-- 图标 type类型 size大小 color颜色 -->
+<view class="group">
+  <icon type="success" size="20" color="re#07c160d"/>
+  <icon type="success_no_circle" size="20" color="red"/>
+  <icon type="info" size="20" color="re#07c160d"/>
+  <icon type="warn" size="20" color="re#07c160d"/>
+  <icon type="waiting" size="20" color="re#07c160d"/>
+   <icon type="cancel" size="20" color="re#07c160d"/>
+    <icon type="download" size="20" color="re#07c160d"/>
+     <icon type="search" size="20" color="re#07c160d"/>
+      <icon type="clear" size="20" color="re#07c160d"/>
+      <!-- 'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear' -->
+   <icon type="success_circle" />
+    <icon type="info_circle"/>
+     <icon type="waiting_circle"/>
+</view>
+<!-- text -->
+<view>
+  <text decode="true">&nbsp;</text>
+  <text>&nbsp;</text>
+</view>
+<!-- image图片标签 -->
+<view>
+    <image src="../../images/cat.jpg" style="width:100px;height:100px;background-color:pink" mode="aspectFit"></image>
+     <image src="../../images/cat.jpg" style="width:100px;height:100px;background-color:pink" mode="scaleToFill"></image>
+     <image src="../../images/cat.jpg" style="width:100px;height:100px;background-color:pink" mode="left"></image>
+</view>
+
+<!-- view组件-->
+<view class="section">
+  <view class="section__title">flex-direction: row</view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item bc_green">1</view>
+    <view class="flex-item bc_red">2</view>
+    <view class="flex-item bc_blue">3</view>
+  </view>
+</view>
+<view class="section">
+  <view class="section__title">flex-direction: column</view>
+  <view class="flex-wrp" style="height: 300px;flex-direction:column;">
+    <view class="flex-item bc_green">1</view>
+    <view class="flex-item bc_red">2</view>
+    <view class="flex-item bc_blue">3</view>
+  </view>
+</view>
+

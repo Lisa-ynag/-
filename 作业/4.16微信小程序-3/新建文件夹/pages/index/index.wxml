@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="indexWrap">
+ <image src="../../images/yindao.jpg" class="bgimg"></image>
+ <button class="btn" bindtap="onInto">进入游戏</button>
+</view>

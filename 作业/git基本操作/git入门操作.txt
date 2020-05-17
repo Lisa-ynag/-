@@ -1,0 +1,73 @@
+提前准备：去github官网注册一个账号。
+
+一、下载，安装git
+    官网：https://git-scm.com/
+    检查安装： cmd  , git --version
+    安装完成后，在开始菜单里找到“Git”->“Git Bash”
+二、基本配置 user.name & user.email
+     git config --global user.name "hedyLi"
+     git config --global user.email "lihanying_vin@163.com"
+
+    这台机器上所有的Git仓库都会使用这个配置
+
+     查看配置： git config --list
+三、基本操作
+    初始化仓库    git init   (会生成一个隐藏的.git的文件夹，不要随便删除）
+    查看状态      git status 
+    添加到暂存区  git add 文件名  / git add --all
+    提交到仓库    git commit -m  "描述信息"
+    查看历史提交  git log  / git log --pretty=oneline
+    对比文件内容  git diff 文件名
+    版本回退      git reset --hard HEAD^/版本号
+                  (git reset --hard HEAD^ 上一个版本
+                   git reset --hard HEAD^^ 上上个版本)
+    查看命令历史  git reflog
+
+
+四、撤销场景
+    4.1 场景1 ，对工作区内容已经进行了修改，但是改完之后又不想要了，想回到修改之前。
+        解决方案： git checkout -- 文件名称
+            例如： git checkout -- temp01.txt
+    4.2 场景2 ， 已经修改了工作区的内容，还添加到了暂存区。
+        解决方案： git reset HEAD 文件名    （回到工作区，场景1）
+                   git checkout -- 文件名
+    4.2 场景3，  已经修改了工作区内容，不仅添加到了暂存区，还提交到了master分支。      
+        解决方案：版本回退
+                   git reset --hard HEAD^/版本号
+                  (git reset --hard HEAD^ 上一个版本
+                   git reset --hard HEAD^^ 上上个版本)
+
+五、删除
+    5.1 在工作区中删除了一个demo.txt
+        情况1 删错了 。  git checkout -- 文件名
+        情况2 要删除 。  git rm 文件名
+
+
+六、远程仓库的基本配置
+6.1 注册一个github账号
+6.2 生成SSH ssh-keygen -t rsa -C youremail@example.com
+    执行过程中，回车即可。
+    执行成功后，对应在本地用户目录下会多出.ssh的文件夹。
+    例如：C:\Users\kawa
+6.3 登录github配置ssh秘钥
+    点击头像-->settings-->左侧SSH and GPG keys --> new (复制本地的.pub结尾的密钥内容）[title自己取名，key就是.pub里面的内容]
+
+
+七、远程仓库关联
+   7.1 本地已经有一个仓库，需要与github仓库进行关联。
+       a. 打开github， 打开Your responsitories , 点击new ，填写仓库名称和描述即可。最后点击 Create repository。
+       b.git remote add origin git@github.com:hedyLi/3201demo.git
+         git push -u origin master （第一次需要-u ）
+      
+         【下一次提交到远程仓库时，可以直接git push origin master / git push 仓库地址】
+
+   7.2 本地没有，直接在github上初始化一个空的项目。
+       a. 打开github， 打开Your responsitories , 点击new ，填写仓库名称和描述，还要勾选上“Initialize this repository with a README”。最后点击 Create repository。
+       b. 复制github上面的地址，在本地执行 git clone git@github.com:hedyLi/3202demo.git
+          成功后，就相当于把远程的项目拷贝下来了，同时也有本地仓库
+
+
+作业1： 将小游戏项目push到github中
+作业2： 创建一个空的项目clone到本地文件夹内。
+
+下节课 分支....

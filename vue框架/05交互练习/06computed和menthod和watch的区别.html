@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<!-- 
+			1.computed是一个计算值，methods是一个函数，可以有返回值
+			2.computed属于一个属性的调用，不需要带括号。methods是函数的调用，需要带()
+			3.computed带有缓存功能，当页面渲染时，只要值没有改变，直接去上一次缓存的值。
+			而methods函数调用 每一次都会调用
+			computed 一个数据 受多个数据影响
+			watch  ： 没有缓存
+				用于侦听属性，一般用于异步请求或者开销比较大的操作
+				一个数据发送变化是 ，改变多个数据
+		 -->
+		<div id="box">
+			<input type="text" v-model="fsname"/>
+			<input type="text" v-model="lsname"/>
+			<div>
+				{{fulname}}{{fulname}}{{fulname}}
+			</div>
+			<div>
+				{{getfulname()}}{{getfulname()}}{{getfulname()}}
+			</div>
+		</div>
+	</body>
+	<script>
+		let vm = new Vue({
+			el:"#box",
+			data:{
+				fsname:'',
+				lsname:''
+			},
+			computed:{
+				fulname(){
+					console.log('computed');
+					return this.fsname+'-'+this.lsname;
+				}
+			},
+			methods:{
+				getfulname(){
+					console.log('methods')
+					return this.fsname+'-'+this.lsname;
+				}
+			},
+			watch:{
+				fsname:function(newVal,oldVal){
+					console.log('watch');
+					console.log(this.fsname,newVal,oldVal);
+				}
+			}
+		})
+	</script>
+</html>

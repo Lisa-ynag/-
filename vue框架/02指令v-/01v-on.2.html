@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.pardiv{
+				height: 300px;
+				width: 300px;
+				text-align: center;
+				background-color: pink;
+			}
+			.childdiv{
+				height: 100px;
+				width: 100px;
+				background-color: paleturquoise;
+			}
+		</style>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 
+			问题：事件的冒泡，点击clild的时候，由于也属于parent区域，因此也会触发parent
+			解决冒泡：v-on的修饰符
+			.stop 相当与调用event.stopPropagation()阻止事件的冒泡
+			.prevent 相当于调用event.preventDefault()阻止事件的默认行为
+			.self事件只从自身触发时才会被回调
+		 -->
+		<div id="box">
+			<!-- 解决方案1 限制只在自身触发，不能被冒泡触发 -->
+			<div class="pardiv" @click.self="pFn">
+				pardiv
+				<div class="childdiv" @click="cFn">
+					childdiv
+				</div>
+				<!-- 解决方案2 .stop阻止事件冒泡-->
+				<!-- <div class="childdiv" @click.stop="cFn">
+					childdiv
+				</div> -->
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:'#box',
+			//变量数据
+			data:{
+				
+			},
+			//函数定义在methods属性中
+			methods:{
+				pFn:function(){
+					console.log('pardiv')
+				},
+				cFn:function(){
+					console.log('child')
+				}
+			}
+		})
+	</script>
+</html>

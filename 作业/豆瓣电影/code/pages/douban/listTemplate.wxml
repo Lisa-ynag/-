@@ -1,0 +1,18 @@
+<template name="mylist">
+<view class="weui-panel weui-panel_access movieslist" wx:for="{{movies}}">
+	<scroll-view scroll-x="true">
+      <view class="moviesbox"> 
+       
+            <image src="{{item.images.large}}" class="movieimg"></image>
+            <view class="movietitle">
+            <view>{{item.title}}</view>
+            <view class="tilieTwo">{{item.original_title}}</view>
+            <view class="bootm">导演：{{item.directors[0].name}}</view>
+            </view>
+            <view class="weui-cell__bd">
+					<text class="weui-badge">{{item.rating.average}}</text>
+				</view>
+      </view>
+  </scroll-view>
+  	</view>
+</template>

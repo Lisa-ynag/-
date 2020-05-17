@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			{
+				/* 求幂运算
+				 一起的Math.pow(m,n)表示的是m的n次方*/
+				 /* let result1 = Math.pow(2,3);
+				 console.log(result1);//8
+				 let result2 = Math.pow(3,3);
+				 console.log(result2);//27 */
+			}
+			{
+				/* ES7(**)进行幂运算
+				 一起的Math.pow(m,n)表示的是m的n次方*/
+				/* let result1 = 2**3;
+				 console.log(result1);//8
+				 let result2 = 3**3;
+				 console.log(result2);//27 */
+			}
+			{
+				/* ES7
+				 Array.prototype.includes()
+				 检查某个元素在数组中是否存在 true/false*/
+				 let arr = [55,88,33,22];
+				 let result = arr.includes(20);
+				 let result2 = arr.includes(22);
+				 console.log(result,result2)//false true
+				 /* 传入两个测试 参数1要寻找的内容 参数2 开始寻找下标*/
+				  console.log(arr.includes(33,1));//true
+				   console.log(arr.includes(33,3))//false
+			}
+			{
+				/* ES8
+				 Object-entries() Object.values()
+				 Object-entries()可以将某个对象的可枚举属性和值按照二维数组的方式进行返回*/
+				/* let result1 = Object.values({
+					 name:"zhansan",
+					 age:20,
+					 address:'南山区'
+				 })
+				 console.log(result1);// ["zhansan", 20, "南山区"]
+				 let result2 = Object.entries(['张三','李四']);
+				 console.log(result2);//["0", "张三"] ["1", "李四"] */
+				
+			}
+			{
+				//Object..values();与entries()类似，但是只返回键值对中值 返回值是一个一维数组
+				let result1 = Object.values({
+					name:"zhansan",
+					age:20,
+					address:'南山区'
+				})
+				console.log(result1);// ["zhansan", 20, "南山区"]
+				let result2 = Object.values(['张三','李四']);
+				console.log(result2);//["张三"] [李四"] 
+			}
+			{
+				/* ES8引入一个字符串长度补全的方法
+				 padStart(len,str)头部补全
+				 padEnd(len,str)尾部补全*/
+				 let str = 'hello';
+				 console.log(str.padStart(10,'a'));//aaaaahello
+				  console.log(str.padEnd(10,'a'));//helloaaaaa
+				  //1 6位
+				  console.log('1'.padStart(6,'a'));//aaaaa1
+				  console.log('100'.padStart(6,'a'));//aaa100
+			}
+			
+		</script>
+	</body>
+</html>

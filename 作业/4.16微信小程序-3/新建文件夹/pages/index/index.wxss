@@ -1,0 +1,16 @@
+/**index.wxss**/
+.indexWrap{
+  position: relative;
+}
+.indexWrap .bgimg{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+.indexWrap .btn{
+  position: absolute;
+  top: 880rpx;
+  left: 180rpx;
+  color: #fff;
+  background-color: yellowgreen;
+}

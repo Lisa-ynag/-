@@ -1,0 +1,41 @@
+/* 轮播图区 */
+swiper{
+  width: 100%;
+  text-align: center;
+}
+
+swiper image{
+  width: 100%;
+  height: 100%;
+}
+/* 搜索区 */
+#searchBar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* z-index: 999; */
+}
+.weui-search-bar{
+  background-color: #ccc;
+  opacity: .8;
+}
+
+/* 电影区 */
+.movieslist .moviesbox{
+  display: flex;
+}
+.movieslist .moviesbox navigator{
+  margin: 10rpx;
+}
+.movieslist .movieimg{
+  width: 180rpx;
+  height: 260rpx;
+}
+.movieslist .movietitle{
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 180rpx;
+}

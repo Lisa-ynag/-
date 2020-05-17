@@ -1,0 +1,14 @@
+  <view class="addtodo" >代办列表<text class="mytitle" bindtap="godemo1">+</text></view>
+<view  class='slide'  >
+  <slide-view width="750" height="110" slide-width="500" wx:for="{{todoList}}" wx:key="this">
+  <view slot="left" class="l">
+    <view class='text'>
+      <view class='title'>{{item}}</view>
+       <icon type="{{item.status?'success':'circle'}}" color="#00b26a" size="18" class="icon"></icon>
+    </view>
+  </view>
+  <view slot="right" class="r">
+    <view class='delete' bindtap="delate" data-id="{{index}}">删除</view>
+  </view>
+</slide-view>
+</view>

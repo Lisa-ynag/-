@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function sum(num){
+				/* 判断是否存在对象，如果没有就创建一个用于储存计算过的值 */
+				if(!sum.obj){
+					sum.obj={};
+				}
+				else if(sum.obj[num]!=null){
+					//直接返回结果
+					return sum.obj[num];
+				}
+				let result = 0;
+				for(let i=0;i<num;i++){
+					result+=1;
+				}
+				console.log('执行了for循环')
+				/* 把结果存储到obj中 */
+				sum.obj[num] = result;
+				return result;
+				
+			}
+			console.time('sum');
+			console.log(sum(10000));
+			console.log(sum(10000));
+			console.log(sum(10000));
+			console.log(sum(10000));
+			console.log(sum(10000));
+			console.timeEnd('sum');
+			/* 对同参数的函数多次执行时，可以对结果做一个存储，来提高效率
+			
+			未缓存前：8.029052734375ms 
+			缓存后，减少了for循环的次数，提高效率 1.2841796875ms 
+			利用内存空间换取性能。
+			*/
+		</script>
+	</body>
+</html>

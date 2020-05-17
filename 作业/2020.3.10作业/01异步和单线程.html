@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		一、说说你对Javascript单线程的理解？
+			JS最大的特点就是单线程，同一个时间只做一件事情。
+			js主要用途就是操作DOM，实现与用户的交互。
+			例如：同时两个线程，一个在操作添加，一个在删除，如果同时进行浏览器该以哪一个为主？复杂度就增加了。
+		
+		二、Javascript的运行机制？
+			单线程，意味着所有的任务，需要排队，一个任务执行完成以后才能去执行下一个任务。
+			JS里将任务又分成了两种，一种是同步任务，一种异步任务。
+			同步任务在主线程执行栈中，必须是前一个执行完成才会执行下一个任务
+			任务队列中的任务，是由它自己去通知主线程，某个异步任务可以执行，这个任务就会进入到主线程去执行。
+			
+		三、同步和异步的区别？
+			同步：需要等待，同步是阻塞的任务，一个任务执行完成后才能执行下一个任务
+			异步：不需要等待，异步是非阻塞任务。
+		 -->
+		 <script type="text/javascript">
+		 	/* console.log(1);
+			alert(2);
+			console.log(3); */
+			
+			//异步
+			/* console.log(1);
+			setTimeout(function(){
+				console.log(2);
+			},1000)
+			console.log(3); */
+			
+			//异步场景：
+			/* 1.事件绑定
+			2.setTimeout(),setInterval();
+			3.$.ajax()
+			4.图片加载
+				let img = docment.creatoElement('');
+				img.src = imgsrc;
+				img.onload = function(){}
+				*/
+			   
+			   console.log(1)
+			   setTimeout(()=>{
+				   console.log(2)
+			   },2000);
+			   console.log(3)
+			   setTimeout(()=>{
+			   		console.log(4)
+			   },1000);
+			    console.log(5)
+				//输出1 3 5 4 2
+		 </script>
+	</body>
+</html>

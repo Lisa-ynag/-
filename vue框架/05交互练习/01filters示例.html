@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<!-- 作用：在不改变数据的情况下，显示想要的内容 -->
+		<div id="box">
+			<ul>
+				<li v-for="item in arr">
+					{{item.name}}--{{item.price | discount(50) | format}}
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:"#box",
+				data:{	
+					arr:[
+						{name:'洗衣机',price:3000},
+						{name:'电冰箱',price:2000},
+						{name:'电视机',price:3000}
+					]
+				},
+				filters:{
+					discount:function(val,disc){
+						return val*disc/100;
+					},
+					format:function(val){
+						return '￥'+val;
+					},
+				}
+			})
+			
+		</script>
+	</body>
+</html>
+

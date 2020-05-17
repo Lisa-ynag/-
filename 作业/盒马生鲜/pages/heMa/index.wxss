@@ -1,0 +1,152 @@
+/* pages/heMa/index.wxss */
+.titleBox{
+  background-color: #0eb6ff;
+  display: flex;
+  position: relative;
+  height: 120rpx;
+}
+.titleBox .myform{
+  width: 610rpx;
+  background-color: #0eb6ff;
+  position: absolute;
+  left: 70rpx;
+}
+.titleBox .myicon{
+ width: 60rpx;
+ height: 60rpx;
+ position: absolute;
+ left: 10rpx;
+ top: 20rpx;
+}
+.titleBox .icontwo{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 10rpx;
+}
+/* 轮播图 */
+.img{
+  width: 100%;
+}
+.gongao{
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 20rpx;
+  font-size: 12px;
+  background-color: #fff4d1;
+  color: gray;
+}
+.gongao image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+/* 商品列表 */
+.shoppingbox{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+}
+.shoppingbox .spbox{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin: 30rpx;
+}
+.shoppingbox .spimg{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  transform:rotate(-12deg);
+}
+/* 王牌大赏 */
+.dashanbox{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 40rpx;
+  position: relative;
+  font-weight: bold;
+  font-size: 18px;
+}
+.dashanbox image{
+    width: 50rpx;
+    height: 60rpx;
+    vertical-align: middle;
+}
+.dashanbox .right{
+  position: absolute;
+  right: 113rpx;
+}
+.dashanbox .yuan{
+  position: absolute;
+  top: 53rpx;
+  right: 50rpx;
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 50%;
+  background-color: black;
+  color: #fff;
+}
+/* 渲染区 */
+.scroll{
+  height: 350rpx;
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+  margin-top: 20rpx;
+}
+.scrollbox-1{
+  display: inline-block;
+  width: 830rpx;
+}
+.scrolimg{
+  width: 300rpx;
+  float: left;
+  margin-right: 50rpx;
+}
+.scrollbox-1 .scrollbox-2{
+  overflow: hidden;
+}
+.scrollbox-1 .scrollbox-2 .name{
+  width: 362rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 18px;
+}
+.scrollbox-1 .scrollbox-2 .secname{
+  font-size: 14px;
+  color: gray;
+}
+.scrollbox-1 .scrollbox-2 .boxchid .letfbox{
+  float: left;
+}
+.scrollbox-1 .scrollbox-2 .boxchid .leftTitle{
+ font-size: 18px;
+ font-weight: bold;
+}
+.scrollbox-1 .scrollbox-2 .boxchid .leftSecTitle{
+ color: gray;
+}
+.scrollbox-1 .scrollbox-2 .boxchid .rightbox{
+  float: right;
+  margin-right: 114rpx;
+}
+.scrollbox-1 .scrollbox-2 .boxchid .rightTitle{
+  font-size: 18px;
+  font-weight: bold;
+ }
+ .scrollbox-1 .scrollbox-2 .boxchid .rightSecTitle{
+  color: gray;
+ }
+ .scrollbox-1 .numbox{
+   margin-top: 20rpx;
+ }
+ .scrollbox-1 .numbox .num{
+   color: orange;
+ }
+

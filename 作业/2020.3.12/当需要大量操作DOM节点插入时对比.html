@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ullist"></ul>
+		<script type="text/javascript">
+			let ullist = document.getElementById('ullist');
+			/* 第一种方式，边循环边插入到页面中  */
+			/* console.time();
+			for(let i=0;i<1000;i++){
+				ullist.innerHTML += `<li>${i}</li>`;
+			}
+			console.timeEnd(); *///3781.744873046875ms
+			console.time();
+			let str = "";
+			for(let i=0;i<1000;i++){
+				str += `<li>${i}</li>`;
+			}
+			ullist.innerHTML = str;
+			console.timeEnd();//3.68017578125ms
+			
+			/* 
+			总结：大量DOM节点操作时
+			第一种方式频繁的在渲染页面。
+			第二种只渲染了一次。因此效率更高。
+			推荐第二种。
+			 */
+		</script>
+	</body>
+</html>

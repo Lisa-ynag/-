@@ -1,0 +1,38 @@
+<view class="shoppingWrap">
+  <view class="shoptitle">
+    购物车
+    <a class="right" bindtap="delGoods">删除</a>
+  </view>
+  <ul class="shoplist">
+   <li class="item" wx:for="{{shoppingList}}" wx:key="index">
+    <view class="sicon">
+      <icon id="{{index}}" bindtap="selectGoods" type="{{item.type}}" color="#23a3ff"></icon>
+    </view>
+    <view class="sime">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="sinfo">
+      <text class="name">{{item.name}}</text>
+      <view class="price">￥{{item.price}}/{{item.unit}}</view>
+      <view class="count">
+        <text class="reduce left" bindtap="reduceCount" id="{{index}}">-</text>
+        <text class="number left">{{item.count}}</text>
+        <text class="add left" bindtap="addCount" id="{{index}}">+</text>
+      </view>
+    </view>
+   </li>
+  </ul>
+  <view class="shopping_ft">
+    <view class="left">
+      <icon bindtap="selectall" type="{{allStatus}}" color="#23a3ff"></icon>
+      全选
+    </view>
+    <view class="shoppingsum">
+      <text>合计：</text>
+      <text>￥{{sumPrice}}元</text>
+    </view>
+    <view class="buy" bindtap="gobuy">
+      去结算
+    </view>
+  </view>
+</view>

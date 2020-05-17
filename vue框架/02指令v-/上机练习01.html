@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+		<fieldset>
+		    <legend>用户注册</legend>
+			<p>用户名：<input type="text"  v-model="user"/></p>
+			<p>密码框：<input type="password" v-model="psd"/></p>
+			<p>性别：
+			<input type="radio" value="男" v-model="sex"/ >男
+			<input type="radio" value="女" v-model="sex"/>女</p>
+			<p>
+				爱好（多选按钮）：
+				<input type="checkbox" value="吃" v-model="str"/>吃
+				<input type="checkbox" value="玩" v-model="str"/>玩
+				<input type="checkbox" value="睡觉" v-model="str"/>睡觉
+				<input type="checkbox" value="唱歌" v-model="str"/>唱歌
+			</p>
+			<p>
+				<input type="submit" value="提交" /> 
+				<input type="submit" value="重置" />
+				</p>
+		  </fieldset>
+			<p>填写的表单内容如下：</p>
+			<p>用户名：{{user}}</p>
+			<p>密码：{{psd}}</p>
+			<p>性别：{{sex}}</p>
+			<p>爱好（多选）：{{str}}</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:'#box',
+			data:{
+				user:'',
+				psd:'',
+				sex:'',
+				str:[]
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<!-- 
+		 Vue示例生命周期：从创建到销毁的整个过程。
+		 作用：可以利用不同时期的钩子函数去完成不同的操作
+		 分类：
+		 create(创建)：beforeCreate  created
+		 mount(挂载)：beforeMount mounted
+		 update(更新)：beforUpdate updated
+		 destroy(销毁)：beforeDestroy  destroyed
+		 -->
+		<div id="box">
+			<input type="text" v-model="msg" />
+			<p>
+				{{msg}}
+			</p>
+		</div>
+	</body>
+	<script>
+		let vm = new Vue({
+			el:"#box",
+			data:{
+				msg:'hello'
+			},
+			//语法上与data和methods同级，是一个函数
+			//创建前
+			beforeCreate:function(){
+				console.group('-----------beforeCreate-------------')
+				console.log(`el:${this.$el},data:${this.$data},msg:${this.msg}`);
+				//el:undefined,data:undefined,msg:undefined
+				//都没有，这时候说明还未创建
+			},
+			//创建完成
+			created:function(){
+				console.group('-----------created-------------')
+				console.log(`el:${this.$el},data:${this.$data},msg:${this.msg}`);
+				//el:undefined,data:[object Object],msg:undefined
+				//el还是没有，都是data和msg已经创建了
+			},
+			//挂载之前
+			beforeMount:function(){
+				console.group('-----------beforeMount-------------')
+				console.log(this.$el)
+				console.log(`el:${this.$el},data:${this.$data},msg:${this.msg}`);
+				//el:[object HTMLDivElement],data:[object Object],msg:undefined
+				//虽然三个都有值了，但是el并没有真正的创建完成，其中对msg这些都是以占位符的形式存在。
+			},
+			//挂载之后
+			mounted:function(){
+				console.group('-----------mounted-------------')
+				console.log(this.$el)
+				console.log(`el:${this.$el},data:${this.$data},msg:${this.msg}`);
+				// el已经真正的创建完成，数据替换完成
+				// 发起异步请求，
+				// 接收页面间传递的参数
+				// 子传值给父组件
+			},
+			//更新之前
+			beforeUpdate:function(){
+				console.group('-----------beforeUpdate-------------')
+				console.log(this.$el)
+				console.log(`el:${this.$el},data:${this.$data},msg:${this.msg}`);
+			},
+			// 更新完成
+			updated:function(){
+				console.group('-----------updated-------------')
+				console.log(this.$el)
+				console.log(`el:${this.$el},data:${this.$data},msg:${this.msg}`);
+			},
+			// 销毁之前
+			beforeDestroy:function(){
+				console.group('-----------beforeDestroy-------------')
+				console.log(this.$el)
+				console.log(`el:${this.$el},data:${this.$data},msg:${this.msg}`);
+			},
+			// 销毁完成
+			destroyed:function(){
+				console.group('-----------destroyed-------------')
+				console.log(this.$el)
+				console.log(`el:${this.$el},data:${this.$data},msg:${this.msg}`);
+			}
+		})
+		//vm.$destroy(), 销毁
+		//效果：不再有双向绑定的效果
+	</script>
+</html>

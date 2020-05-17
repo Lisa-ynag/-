@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="box">{{'2020'|filterA|filterB}}</div>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:"#box",
+				data:{	
+				},
+				filters:{
+					filterA:function(value){
+						return value +'年'
+					},
+					filterB:function(value){
+						return value +'hello'
+					},
+				}
+			})
+			
+		</script>
+	</body>
+</html>

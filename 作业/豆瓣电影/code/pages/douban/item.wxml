@@ -1,0 +1,13 @@
+<loading hidden="{{!showloading}}">加载中</loading>
+<view class="box">
+<image src="../douban/images/Snipaste_2020-04-23_17-29-33.png" ></image>
+	<view class="weui-article__h1">{{movie.title}}({{movie.year}})</view>
+	<view class="weui-article__section">
+		<view class="weui-article__h3 text">评分：{{movie.rating.average}}</view>
+		<view class="weui-article__h3 text">导演：<block wx:for="{{movie.directors}}">{{item.name}}</block></view>
+		<view class="weui-article__h3 text">主演：<block wx:for="{{movie.casts}}">{{item.name}}</block></view>
+		<view class="weui-article__p">
+		{{movie.summary}}
+		</view>
+	</view>
+</view>

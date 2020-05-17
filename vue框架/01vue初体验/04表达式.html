@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<h1>获取msg值：{{msg}}</h1>
+			<p>
+				数值：{{100}}
+			</p>
+			<p>
+				字符串：{{'张三'}}
+			</p>
+			<p>
+				运算：{{1+1}}
+			</p>
+			<p>
+				拼接:{{msg+'李四'}}
+			</p>
+			<p>
+				三元操作符：{{1==1?"true":"false"}}
+			</p>
+		</div>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:'#box',
+				data:{
+					msg:'hello'
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<!-- 
+			组件：Component: 自定义标签。
+			目的：封装可重用的标签代码。
+				分类：
+					全局组件
+						在所有作用域（所有示例）有效
+					局部组件
+						只在当前定义的作用域内有效
+		 -->
+		<div id="box">
+			<!-- 3.使用组件 -->
+			<demo></demo>
+			<demo></demo>
+			<demo-T2></demo-T2>
+			vm:{{msg1}}
+		</div>
+		<div id="box2">
+			<!-- 非作用域内访问不到demo的内容 -->
+			<!-- <demo></demo> -->
+		</div>
+		<!-- 2.定义模板 -->
+		<template id="mytemplate">
+			<div>
+				<img src="img/xiaoman.jpg" height="100px" width="100px">
+				<h3 @click="fn">这里是标题内容</h3>
+				<p>馒头馒头馒头 {{msg}}</p>
+			</div>
+		</template>
+	</body>
+	<script>
+		let vm = new Vue({
+			el:"#box",
+			data:{
+				msg1:'kaka'
+			},
+			//1.定义局部组件
+			components:{
+				//组件名称
+				'demo':{
+					//template：标签|#templateid
+					template:"#mytemplate",
+					data:function(){
+						return{
+							msg:'组件msg'
+						}
+					},
+					methods:{
+						fn(){
+							console.log('fn')
+						}
+					}
+				},
+				//如果模板名使用了驼峰命名法，调用时需要-链接
+				'demoT2':{
+					template:'<div>我是div</div>'
+				}
+			}
+		})
+		// let vm2 = new Vue({
+		// 	el:"#box2",
+		// })
+	</script>
+</html>

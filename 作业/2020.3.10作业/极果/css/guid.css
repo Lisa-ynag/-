@@ -1,0 +1,164 @@
+
+.myh2{
+	text-align: center;
+	padding: 20px 0;
+}
+.titleDiv{
+	text-align: center;
+}
+.titleDiv a{
+	display: inline-block;
+	width: 100px;
+	padding: 10px ;
+}
+.titleDiv .ative{
+	border-bottom: 2px solid #fc6544;
+	color: #fc6544;
+}
+.listul {
+  height: 100%;
+  padding: 20px 100px;
+  background-color: #f6f6f7;
+ display: flex;
+ flex-wrap: wrap;
+}
+.listul li{
+	list-style: none;
+	margin: 20px 15px;
+	width: 295px;
+	border-radius: 5px;
+	background-color: #fff;
+	position: relative;
+	border: 1px solid #e9ebeb;
+}
+.listul li .liimg{
+	width: 100%;
+	height: 177px;
+}
+.listul li .liimg img{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px 5px 0 0;
+}
+.listul li .liimg:before{
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:177px;
+	border-radius: 5px 5px 0 0;
+}
+.listul li .liimg:hover:before{
+	animation: myfirst 4s;
+}
+@keyframes myfirst{
+	0%{
+		background-color: transparent;
+	}
+	15%{
+		background-color: rgba(255,255,255,0.6);
+	}
+	30%{
+		background-color: transparent;
+	}
+	45%{
+		background-color: rgba(255,255,255,0.6);
+	}
+	60%{
+		background-color: transparent;
+	}
+	75%{
+		background-color: rgba(255,255,255,0.6);
+	}
+	100%{
+		background-color: transparent;
+	}
+	
+}
+.listul li .pti{
+	padding: 10px;
+	font-size: 18px;
+}
+.listul li .ptitow{
+	padding: 0 10px;
+	color: gray;
+}
+.listul li .lidi {
+	width: 274px;
+	height: 25px;
+	float: right;
+	padding: 10px;
+	padding-top: 20px;
+	color: gray;
+	position: relative;
+}
+.listul li .lidi .jiage{
+	color: #fc5738;
+	position: absolute;
+	left: 10px;
+}
+.listul li .lidi .right{
+	position: absolute;
+	right: 10px;
+}
+.listul li .lidi a{
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		background: url(../img/xin.png) no-repeat;
+		background-size: contain;
+}
+.listul li .lidi .reply{
+	background: url(../img/reply.png) no-repeat;
+	
+}
+.listul li .mydiv{
+	width: 95%;
+	height: 5px;
+	border-radius: 10px;
+	border: 1px solid #e9ebeb;
+	background-color: #fbfdfc;
+	position: absolute;
+	bottom: -7px;
+	left: 8px;
+}
+.listul li .mydiv2{
+	width: 92%;
+	bottom: -13px;
+	left: 12px;
+}
+.cilk{
+	background-color: #f6f6f7;
+	text-align: center;
+	color: #fc6544;
+	padding: 50px 0 ;
+	
+}
+.cilk span{
+	display: inline-block;
+	width: 15px;
+	height: 12px;
+	background: url(../img/more.png) 0 0 no-repeat;
+	background-size: contain;
+	vertical-align: middle;
+	margin: 0 5px;
+	
+}
+.cilk2{
+	background-color: #f6f6f7;
+	text-align: center;
+	color: #fc6544;
+	padding: 50px 0 ;
+	display: none;
+}
+.cilk2 span{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url(../img/loading-icon.gif) 0 0 no-repeat;
+	background-size: contain;
+	vertical-align: middle;
+	margin: 0 5px;
+}
+

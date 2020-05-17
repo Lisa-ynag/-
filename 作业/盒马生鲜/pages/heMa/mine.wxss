@@ -1,0 +1,69 @@
+
+.titlebox{
+  background-color: #23a3ff;
+  display: flex;
+  color: #fff;
+}
+.titlebox view{
+  padding: 40rpx 20rpx;
+}
+.titlebox view:nth-child(1){
+  width: 200rpx;
+  border-radius: 50%;
+}
+.titlebox view:nth-child(1) .box{
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.titlebox view:nth-child(1) .box image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.titlebox view:nth-child(2){
+  height: 100rpx;
+  margin-top: 42rpx;
+}
+.titlebox view:nth-child(3){
+  height: 100rpx;
+  margin-top: 16rpx;
+}
+.titlebox view:nth-child(1) image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.titlebox view:nth-child(3) image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.titlebox view:nth-child(4) image{
+  width: 120rpx;
+  height: 120rpx;
+}
+/* nav */
+.weui-flex .weui-flex__item{
+  padding: 10rpx;
+  border-bottom: 1px solid #ccc;
+}
+.weui-flex .weui-flex__item .placeholder{
+  text-align: center;
+  padding: 20rpx 0;
+  border-right: 1px solid #ccc;
+}
+.weui-flex .weui-flex__item .placeholder image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.weui-flex .weui-flex__item .last{
+  border: none;
+}
+.weui-cell_access .weui-cell__bd image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}

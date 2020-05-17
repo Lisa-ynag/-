@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="todo">
+            <view>代办标题：</view>
+          <input  bindinput="getVal"></input>
+    </view>
+    	<view class="page__bd page__bd_spacing">
+        <a class="weui-btn weui-btn_default" bindtap="godemo">增加代办</a>
+	</view>
+   <!-- <button class="mybtn" bindtap="godemo">增加代办</button> -->
+</view>

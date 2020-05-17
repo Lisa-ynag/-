@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				padding: 20px;
+				background-color: #60a0bb;
+				width: 300px ;
+				height: 300px;
+				}
+				h2{
+					text-align: center;
+					margin: 0;
+				}
+			ul{
+				padding: 10px 0;
+				/* margin-bottom: 20px; */
+				border-bottom: 1px solid #fff;
+			}
+			li{
+				list-style: none;
+				padding: 10px 20px;
+				background-color: #e0c921;
+				margin: 5px 0;
+			}
+			
+			span{
+				display: inline-block;
+				
+				text-align: center;
+				vertical-align: middle;
+				float: right;
+			}
+			.active{
+				background-color: #8cc06d;
+			}
+		</style>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<h2>Services</h2>
+			<ul>
+				<li @click="click(item,index)" v-for="(item,index) in navs" :key="index" v-bind:class="{active:item.active}">
+					{{item.name}} <span>{{item.price}}</span>
+				</li>
+			</ul>
+			<p>Total:<span>{{curPrice}}</span></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:"#box",
+			data:{
+				navs:[
+					{name:'Web Development',price:3000,active:false},
+					{name:'Python',price:1000,active:false},
+					{name:'Java',price:2000,active:false},
+					{name:'GO',price:2200,active:false}
+				],
+				curPrice:0
+			},
+			methods:{
+				click:function(item,index){
+					item.active = !item.active;
+					if(this.navs[index].active){
+						this.curPrice +=item.price
+					}else{
+						this.curPrice -= item.price
+					}
+					
+				}
+			}
+		})
+	</script>
+</html>

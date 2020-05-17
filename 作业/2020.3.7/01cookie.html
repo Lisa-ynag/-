@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- cookie需要放在服务器上才可以使用
+			用来存储浏览器上一些小的数据
+			数量和大小都是有限制的（4kb）过期时间的
+			同一个网站中所有的页面共享一套cookie
+			 用途：记住我，记住登录名。
+		 -->
+		 <form action="">
+			 <p>
+				 姓名：<input type="text" id="uname" />
+			 </p>
+			 <p>
+				  密码：<input type="password" />
+			 </p>
+			 <p>
+				 <button id="btn">登录</button>
+			 </p>
+		 </form>
+		<script type="text/javascript">
+			/* 
+			1.设置：document.cookie="name=value;expires=过期时间"
+			2.获取：document.cookie
+			
+			设置cookie【存值】
+			 */
+			function setCookie(name,value,iDay){
+				var date = new Date();
+				date.setDate(date.getDate()+iDay);//当前日期+X天
+				document.cookie = `${name}=${value};expires=${date}`;
+			}
+			//删除cookie
+			function removeCookie(name){
+				setCookie(name,1,-1);
+			}
+			//根据cookie名称返回对应的cookie值
+			function getCookie(name){
+				//name1 = zhangsan;name2=lisi;name3=wanwu
+				let arr = document.cookie.split('; ')
+				/* forEach()和 map()区别
+				 forEach不可以return值
+				 map可以return*/
+				for(let i= 0;i<arr.length;i++){
+					let arr2 = arr[i].split('=');
+					if(arr2[0]==name){
+						return arr2[1];
+					}
+				}
+				//函数默认返回undefind,如果没有进入循环，就显示''
+				return '';
+			}
+			
+			console.log(getCookie('name2'))
+			setCookie("name1","zhangsan",1);
+			setCookie("name2","lisi",1);
+			setCookie("name3","wanwu",1);
+			
+			let result = getCookie('username');
+			document.querySelector("#uname").value=result;
+			
+			document.querySelector('#btn').onclick=function(){
+				let v =document.querySelector('#uname').value;
+				setCookie("username",v,1);
+				console.log(1)
+			}
+		</script>
+	</body>
+</html>

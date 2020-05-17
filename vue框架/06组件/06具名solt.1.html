@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<!-- 
+			slot ：插槽 槽口。目的：提高组件的可扩展性
+			适用于 当一个组件在不同的使用场景，组件的一部分内容需要有不同的内容显示时
+			分类：匿名槽口（定义时只有一个，不要有多个，多个可以使用具名槽口）
+			
+				 具名槽口
+		-->
+		<div id="box">
+			<myheader>
+				<div slot="USB">u盘</div>
+				<div slot="Harddrive">硬盘</div>
+				<div slot="Memory">内存条</div>
+			</myheader>
+			<myheader>
+				<div slot="Memory">内存条</div>
+				<div slot="USB">u盘</div>
+			</myheader>
+		</div>
+		<template id="myT">
+			<div>
+				<slot name="USB"></slot>
+				<slot name="Harddrive"></slot>
+				<slot name="Memory"></slot>
+			</div>
+		</template>
+	</body>
+	<script>
+		let vm = new Vue({
+			el:"#box",
+			data:{
+				
+			},
+			components:{
+				'myheader':{
+					template:'#myT'
+				}
+			}
+		})
+	</script>
+</html>

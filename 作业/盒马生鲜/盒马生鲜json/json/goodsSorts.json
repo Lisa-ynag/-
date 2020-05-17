@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "style": "be8159",
+      "imgSrc": "../../assets/images/coffee.png",
+      "text": "休闲零食"
+    },
+    {
+      "style": "a1b1ca",
+      "imgSrc": "../../assets/images/wine.png",
+      "text": "中外名酒"
+    },
+    {
+      "style": "ffc793",
+      "imgSrc": "../../assets/images/water.png",
+      "text": "饮料/水"
+    },
+    {
+      "style": "c2d971",
+      "imgSrc": "../../assets/images/milk.png",
+      "text": "乳品冲饮"
+    },
+    {
+      "style": "f5cb8d",
+      "imgSrc": "../../assets/images/oil.png",
+      "text": "粮油副食"
+    },
+    {
+      "style": "c83d7f4",
+      "imgSrc": "../../assets/images/shampoo.png",
+      "text": "美妆个护"
+    },
+    {
+      "style": "ff9292",
+      "imgSrc": "../../assets/images/bottle.png",
+      "text": "母婴保健"
+    },
+    {
+      "style": "c2ec4c6",
+      "imgSrc": "../../assets/images/cleaner.png",
+      "text": "厨卫清洁"
+    },
+    {
+      "style": "c8599b9",
+      "imgSrc": "../../assets/images/coffee.png",
+      "text": "日用百货"
+    },
+    {
+      "style": "f3d24c",
+      "imgSrc": "../../assets/images/wine.png",
+      "text": "礼品卡券"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<style type="text/css">
+			.box{
+				border: 2px solid #65B449;
+				width: 500px;
+				height: 300px;
+				text-align: center;
+				padding: 20px 0;
+				color: #65B449;
+			}
+			.box .boxc{
+				margin-top: 30px;
+			}
+			button{
+				background-color:  #3186fd;
+				color: #fff;
+				border: none;
+				padding: 10px 20xp;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<parent></parent>
+		</div>
+		<template id="parentT">
+			<div class="box">
+				<div>{{msg}}</div>
+				<!-- 子传父步骤3：接收自定义事件的监听，@event='不带括号的函数名' -->
+				<child1 @change="getVal" ></child1>
+			</div>
+		</template>
+		<template id="childT">
+			<div class="boxc">
+				<!-- 子传父步骤1：主动抛出事件 -->
+				<button type="button" @click="fn1">增加1</button>
+				<!-- 子传父步骤1：主动抛出事件 -->
+				<button type="button" @click="fn2">减小1</button>
+			</div>	
+		</template>
+	</body>
+	<script>
+		let vm = new Vue({
+			el:"#box",
+			data:{},
+			components:{
+				"parent":{
+					template:"#parentT",
+					data:function(){
+						return{
+							msg:'0'
+						}
+					},
+					methods:{
+						//子传父步骤4 拿到数据后处理
+						getVal(val){
+							console.log(val);
+							this.msg = val;
+						}
+						// getVal2(val){
+						// 	console.log(val);
+						// 	this.msg = val;
+						// }
+					},
+					components:{
+						'child1':{
+							template:"#childT",
+							
+							data:function(){
+								return{
+									cmsg:''
+								}
+							},
+							methods:{
+								fn1(){
+									//子传父步骤2：通过$emit()抛出自定义事件监听
+									//this.$emit('自定义事件名称'，传递的参数)
+									this.$emit('change', ++this.cmsg);
+								},
+								fn2(){
+									this.$emit('change', --this.cmsg);
+								}
+							}
+						}
+					}
+					
+				}
+			}
+		})
+	</script>
+</html>

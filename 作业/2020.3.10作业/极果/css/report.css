@@ -1,0 +1,204 @@
+
+.myh2{
+	text-align: center;
+	padding: 20px 0;
+}
+.titleDiv{
+	text-align: center;
+}
+.titleDiv a{
+	display: inline-block;
+	width: 100px;
+	padding: 10px ;
+}
+.titleDiv .ative{
+	border-bottom: 2px solid #fc6544;
+	color: #fc6544;
+}
+.listul {
+  height: 100%;
+  padding: 20px 100px;
+  background-color: #f6f6f7;
+  overflow: hidden;
+}
+.listul li{
+	list-style: none;
+	float: left;
+}
+.listul .myli1{
+	width:70%;
+	margin-right: 20px;
+	padding: 10px 0;
+}
+.listul .myli1 .bgBox{
+	width: 100%;
+	height: 415px;
+	position: relative;
+}
+.listul .myli1 .bgBox:before{
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:100%;
+	border-radius: 5px 5px 0 0;
+}
+.listul .myli1 .bgBox:hover:before{
+	animation: myfirst 5s;
+}
+@keyframes myfirst{
+	0%{
+		background-color: transparent;
+	}
+	15%{
+		background-color: rgba(255,255,255,0.6);
+	}
+	30%{
+		background-color: transparent;
+	}
+	45%{
+		background-color: rgba(255,255,255,0.6);
+	}
+	60%{
+		background-color: transparent;
+	}
+	75%{
+		background-color: rgba(255,255,255,0.6);
+	}
+	100%{
+		background-color: transparent;
+	}
+	
+}
+.listul .myli1 .bgBox img{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+.listul .myli1 .bgBox .bgChind{
+	width: 95.7%;
+	padding: 20px 20px;
+	background-color: rgba(255,255,255,0.8);
+	position: absolute;
+	bottom: 0;
+	
+}
+.listul .myli1 .bgBox .bgChind .divbox{
+	padding-top: 30px;
+}
+.listul .myli1 .bgBox .bgChind .divbox div:nth-child(1){
+	float: left;
+	color: #a2a2a2;
+	font-size: 12px;
+}
+.listul .myli1 .bgBox .bgChind .divbox div:nth-child(1) .touxian{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+}
+.listul .myli1 .bgBox .bgChind .divbox div:nth-child(1) .touxian img{
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+.listul .myli1 .bgBox .bgChind .divbox div:nth-child(1) i{
+	font-style: normal;
+	margin: 0 10px;
+	color: #fc6544;
+}
+.listul .myli1 .bgBox .bgChind .divbox div:nth-child(2){
+	float: right;
+	color: #a2a2a2;
+}
+.listul .myli1 .bgBox .bgChind .divbox div:nth-child(2) a{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url(../img/xin.png) no-repeat;
+	background-size: contain;
+}
+
+.listul .myli1 .bgBox .bgChind .divbox div:nth-child(2) .reply{
+	background: url(../img/reply.png) no-repeat;
+	
+}
+.listul .myli1 .myli1Box .text{
+	margin: 10px 0;
+	border: 1px solid #a2a2a2;
+	border-radius: 5px;
+	padding: 10px 0;
+	text-align: center;
+}
+.listul .myli1 .myli1Box .text a{
+	color: #a2a2a2;
+}
+
+.listul .myli2{
+	width: 28%;
+}
+.listul .myli2 h5{
+	margin: 10px 0;
+	
+}
+.listul .myli2 p{
+	color: gray;
+}
+.listul .myli2 .myh5{
+	padding: 5px 0;
+	border-left: 3px solid #fc523f;
+	text-indent: 10px;
+}
+.listul .myli2 .iconBox{
+	width: 100%;
+	height: 180px;
+}
+.listul .myli2 .iconBox2{
+	height: 160px;
+}
+.listul .myli2 .iconBox img{
+	width: 100%;
+	height: 100%;
+}
+.listul li .mydiv2{
+	width: 92%;
+	bottom: -13px;
+	left: 12px;
+}
+.cilk{
+	background-color: #f6f6f7;
+	text-align: center;
+	color: #fc6544;
+	padding: 50px 0 ;
+	
+}
+.cilk span{
+	display: inline-block;
+	width: 15px;
+	height: 12px;
+	background: url(../img/more.png) 0 0 no-repeat;
+	background-size: contain;
+	vertical-align: middle;
+	margin: 0 5px;
+	
+}
+.cilk2{
+	background-color: #f6f6f7;
+	text-align: center;
+	color: #fc6544;
+	padding: 50px 0 ;
+	display: none;
+}
+.cilk2 span{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url(../img/loading-icon.gif) 0 0 no-repeat;
+	background-size: contain;
+	vertical-align: middle;
+	margin: 0 5px;
+}
+
+
+

@@ -1,0 +1,26 @@
+.gettitle{
+	padding: 0px 150px;
+	overflow: hidden;
+}
+.gettitle li{
+	list-style: none;
+	height: 50px;
+	line-height: 50px;
+}
+.gettitle li:nth-child(1){
+	font-size: 22px;
+	float: left;
+}
+.gettitle li:nth-child(2){
+	float: right;
+}
+.gettitle li:nth-child(2) a{
+	color: #fc6568;
+}
+.gettitle li:nth-child(2) a span{
+	display: inline-block;
+	width: 12px;
+	height: 10px;
+	margin: 0 10px;
+	background: url(../img/readMore.png) 0 0 no-repeat;
+}

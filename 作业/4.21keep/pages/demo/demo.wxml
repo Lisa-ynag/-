@@ -1,0 +1,8 @@
+<view class="box">
+  <view wx:for="{{demo}}" wx:key='id' class="content">
+    <view class="title">{{item.title}}</view>
+    <image src="{{item.images.medium}}" mode="aspectFill" class="images"></image>
+    <view class="string">{{item.genres}}<text>{{item.year}}</text></view>
+    <view class="rating">总分：{{item.rating.max}},豆瓣评分{{item.rating.average}}</view>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title></title>
+		<style type="text/css">
+			#titlebox{
+				width: 100%;
+				position: relative;
+				border-bottom: 1px solid black;
+				text-align: center;
+				line-height: 30px;
+				background-color: #f7f7f7;
+			}
+			#titlebox img{
+				position: absolute;
+				width: 20px;
+				top: 8px;
+			}
+			#titlebox .img2{
+				right: 0;
+				
+			}
+			#titlebox .img1{
+				right: 30px;	
+			}
+		</style>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<demo ctitle="书影音" >
+				<img slot="Leftimg" src="img/豆瓣1.png" class="img1">
+				<img slot="tightimg" src="img/豆瓣2.png" class="img2">
+			</demo>
+			<demo ctitle="广播" >
+				<img slot="Leftimg" src="img/豆瓣3.png" class="img1">
+				<img slot="tightimg" src="img/豆瓣2.png" class="img2">
+			</demo>
+			<demo ctitle="小组" >
+				<img slot="Leftimg" src="img/豆瓣1.png" class="img1">
+				<img slot="tightimg" src="img/豆瓣2.png" class="img2">
+			</demo>
+			<demo ctitle="我的" >
+				<img slot="tightimg" src="img/豆瓣4.png" class="img2">
+			</demo>
+			
+		</div>
+		
+		<template id="myT">
+			<div id="titlebox">
+				{{ctitle}}
+				<slot name="Leftimg"></slot>
+				<slot name="tightimg"></slot>
+			</div>
+		</template>
+	</body>
+	<script>
+		let vm = new Vue({
+			el:"#box",
+			components:{
+				'demo':{
+					template:'#myT',
+					props:['ctitle','src1','src2']
+				}
+			}
+		})
+	</script>
+</html>

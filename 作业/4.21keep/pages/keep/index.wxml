@@ -1,0 +1,13 @@
+<!--pages/keep/index.wxml-->
+<view class="box">
+      <view>
+      预备开始！{{currindex+1}}/{{sportarr.length}} {{sportarr[currindex].runname}}
+      </view>
+      <view>
+      <image src="{{sportarr[currindex].imgSrc}}" class="kepImg"></image>
+      </view>
+      <view>
+      <image src="../../assets/images/timer.png" class="time"></image>
+      倒计时：{{count}}秒
+      </view>
+</view>

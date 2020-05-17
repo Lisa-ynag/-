@@ -1,0 +1,10 @@
+/* pages/apidemo/apidemo.wxss */
+ page button.btn{
+   width: 80%;
+  margin: 35rpx auto;
+  background-color: yellowgreen;
+  color: #fff;
+}
+image{
+  width: 100%;
+}

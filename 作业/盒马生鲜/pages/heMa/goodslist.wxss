@@ -1,0 +1,32 @@
+.goodslistbox{
+  display: flex;
+  width: 100%;
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.goodslistbox .imgbox{
+  width: 390rpx;
+  height: 230rpx;
+  padding: 20rpx;
+}
+.goodslistbox .imgbox .listimg{
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+}
+.goodslistbox .boder{
+  padding: 20rpx;
+}
+.goodslistbox .boder .texbox{
+  margin-top: 70rpx;
+  overflow: hidden;
+  position: relative;
+  color: #ff5513;
+}
+.goodslistbox .boder .texbox .right{
+  position: absolute;
+  right: 50rpx;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0eb6ff;
+}

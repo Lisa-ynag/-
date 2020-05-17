@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button"onclick="sendData()" value="点击一下" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function sendData(){
+				$.ajax({
+					url:"http://localhost:8000",
+					type:"POST",
+					data:{
+						"username":"馒头",
+						"age":2
+					},
+					success:function(res){
+						console.log("success:",res);
+					},
+				})
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+#help {
+  padding: 20px 100px;
+}
+#help .helpbox {
+  display: flex;
+}
+#help .helpbox div {
+  background-color: #f3f3f3;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+#help .helpbox div h2 {
+  border-bottom: 1px solid gray;
+}
+#help .helpbox div h3 {
+  margin: 10px 0;
+}
+#help .helpbox .boxleft {
+  width: 20%;
+  height: 240px;
+}
+#help .helpbox .boxleft p {
+  text-indent: 20px;
+}
+#help .helpbox .boxright {
+  margin-left: 20px;
+}
+#help .helpbox .boxright h3 {
+  margin-top: 50px;
+}

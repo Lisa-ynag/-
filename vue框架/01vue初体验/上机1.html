@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<p>{{msg}}</p>
+			<p>{{20+181}}</p>
+			<p>
+				{{1==1?"YES":"NO"}}
+			</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:'#box',
+			data:{
+				msg:'Message:今天天气不错'
+			}
+		})
+	</script>
+</html>

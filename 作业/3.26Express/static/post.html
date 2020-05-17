@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="sendData()" >提交</button>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function sendData(){
+				$.ajax({
+					url:"http://localhost:8000/post",
+					type:"POST", //请求的方式  get/post
+					dataType:"json",//服务器返回的数据类型
+					data:{//发送的数据
+						"username":"馒头",
+						"age":2
+					},
+					success:function(res){
+						console.log("success:",res);
+					},
+					error:function(err){
+						console.log("err",err);
+					}
+				})
+			}
+		</script>
+	</body>
+</html>

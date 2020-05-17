@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/demo/demo",
+    "pages/keep/first",
+    "pages/keep/index",
+    "pages/keep/readme",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "keep",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color":"#ccc",
+    "selectedColor":"#62beff",
+    "list": [
+      {
+        "pagePath": "pages/keep/index",
+        "iconPath":"./assets/icons/hema.png",
+        "selectedIconPath":"./assets/icons/hema-sel.png",
+        "text": "运动"
+      },
+      {
+        "iconPath":"./assets/icons/mine.png",
+        "selectedIconPath":"./assets/icons/message.png",
+        "pagePath": "pages/keep/readme",
+        "text": "关于keep"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+  
+}

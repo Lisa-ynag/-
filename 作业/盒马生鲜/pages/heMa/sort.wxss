@@ -1,0 +1,43 @@
+/* 轮播图 */
+.img{
+  width: 100%;
+}
+.gongao{
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 20rpx;
+  font-size: 12px;
+  background-color: #fff4d1;
+  color: gray;
+}
+.gongao image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+/* nav */
+.weui-flex{
+  flex-wrap: wrap;
+}
+.weui-flex .weui-flex__item{
+  padding: 10rpx;
+  
+}
+.weui-flex .weui-flex__item .placeholder{
+  text-align: center;
+  padding: 20rpx 0;
+}
+.weui-flex .weui-flex__item .placeholder image{
+  width: 180rpx;
+  height: 180rpx;
+}
+.weui-flex .weui-flex__item .last{
+  border: none;
+}
+.weui-cell_access .weui-cell__bd image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}

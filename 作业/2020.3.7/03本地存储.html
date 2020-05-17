@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+			本地存储（Web Storage）:
+			
+			分类：
+			sessionStorage
+			localStorage
+			特点：
+			存储量限制5M
+			在客户端中完成
+		 sessionStorage数据不共享，localStorage数据共享
+		 sessionStorage：临时会话，从页面打开到页面关闭的时间段，只要页面关闭了，本地忖度就消失
+		 localStorage：永久存在，（可以手动删除）
+		 
+		方法：
+		setItem() 设置数据 key/value类型。类型都是字符串
+		getItem() 获取数据 通过key得value
+		removeItem() 删除，根据key删除对应的value 
+		
+		事件：storage
+		当数据又修改或者删除的情况下，会触发storage事件
+		对数据进行改变的窗口对象是不会触发的，其它窗口对象才会触发
+		key:修改或删除的key值
+		newvalue:新设置的值
+		oldValue:修改之前的值是多少
+		storageArea:当前Storage对象
+		url:触发该脚本的url地址
+		-->
+		 
+		<input type="text" value="temp" />
+		<br>
+		<input type="button" value="存储数据" />
+		<input type="button" value="取数据" />
+		<input type="button" value="删除数据" />
+		<script type="text/javascript">
+			// let inputs = document.getElementsByTagName('input');//4个
+			// inputs[1].onclick = function(){
+			// 	let v = inputs[0].value;
+			// 	window.sessionStorage.setItem('name1',v);
+			// }
+			// inputs[2].onclick = function(){
+			// 	console.log(window.sessionStorage.getItem('name1'))
+			// }
+			// inputs[3].onclick = function(){
+			// 	window.sessionStorage.removeItem('name1');
+			// }
+			
+			let inputs = document.getElementsByTagName('input');//4个
+			inputs[1].onclick = function(){
+				let v = inputs[0].value;
+				window.localStorage.setItem('name2',v);
+			}
+			inputs[2].onclick = function(){
+				console.log(window.localStorage.getItem('name2'))
+			}
+			inputs[3].onclick = function(){
+				window.localStorage.removeItem('name2');
+				
+			}
+			window.addEventListener('storage',function(e){
+				console.log(e)
+			})
+			
+		</script>
+	</body>
+</html>

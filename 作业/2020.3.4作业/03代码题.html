@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			{
+				/* var i = 5;
+				for(let i=0;i<3;i++){
+					setTimeout(()=>{
+						console.log(i)
+					},1000)
+				}
+				console.log(i);//3 0 1 2 */
+				/* 先同步再执行异步，let具有块作用域，值会保留 */
+			}
+			{
+				/* function fn(){
+					console.log(name);
+					console.log(age);
+					var name = 'zhangsan';
+					let age = 31;
+				}
+				fn(); *///undefined  报错before initialization
+				/* var 声明的变量有提升
+				 let变量必须先声明后使用 所以age会报错*/
+			}
+			{/* 
+				for(var i=0;i<3;i++){
+					setTimeout(()=>{
+						console.log(i)
+					},0)
+				}
+				for(let i=0;i<3;i++){
+					setTimeout(()=>{
+						console.log(i)
+					},0)
+				} */
+				/* 333 和 0 1 2 */
+			}
+			{
+				let num1 = 0;
+				console.log(num1++);//0
+				console.log(++num1);//2
+				console.log(num1);//2
+				/* i++ ==i i=i+1
+				 i++先输出后运算
+				 ++i 先运算 后输出*/
+			}
+			{
+				function fn(...args){
+					console.log(args);
+					console.log(typeof args);//object
+				}
+				fn(30);
+			}
+			{
+				console.log(typeof typeof 1);//string
+				/* typeof 1 number
+					typeof 'number' string*/
+			}
+			{
+				/* 题目 Objarr里面的长度是不确定的 */
+				let objarr = [
+					{id:4,name:'小花'},
+					{id:1,name:'小狗'},
+					{id:2,name:'小红'},
+					{id:3,name:'小猫'},
+				]
+				/* 已知小花的id是4 请在控制台输出 "小花"
+					不知道数组下标
+					*/
+				   let id = 4;
+				   let resultobj = objarr.find(item=>{
+					   return item.id == id;
+				   })
+				   console.log(resultobj.name)
+			}
+			// {
+			// 	/* 题目2 ：利用map数据结构筛选结果result
+			// 	   result = [{newaddress:'南山区',newname:"admin"},
+			// 				 {newaddress:'宝安区',newname:"zhangsan"},]*/
+			// 		let json = [
+			// 			{id:1,name:'admin',address:'南山区',code:'333'},
+			// 			{id:2,name:'zhangsan',address:'宝安区',code:'444'}
+			// 		]	
+			// 	let setmap = new Map();
+			// 	for(let i=0;i<json.length;i++){
+			// 		let obj={
+			// 			"newaddress":json[i].address,
+			// 			"newname":json[i].name
+			// 		}
+			// 		setmap.set(i,obj);
+			// 	}
+			// 	let result = new Array();
+			// 	for(let i=0;i<2;i++){
+			// 		result[i]=setmap.get(i)
+			// 	}
+			// 	console.log(result);
+			// }
+			{
+				/* 题目2 ：利用map数据结构筛选结果result
+				   result = [{newaddress:'南山区',newname:"admin"},
+							 {newaddress:'宝安区',newname:"zhangsan"},]*/
+					let json = [
+						{id:1,name:'admin',address:'南山区',code:'333'},
+						{id:2,name:'zhangsan',address:'宝安区',code:'444'}
+					]	
+				//1.先将数据存储到数据结构中
+				let map = new Map();
+				for(let t in json){
+					map.set(json[t].id,json[t]);
+				}
+				let result = [];
+				//遍历map
+				map.forEach((item,key)=>{
+					console.log(item,key)
+					let {name,address} = item;
+					result.push({newname:name,newaddress:address});
+				})
+				console.log(result);
+			}
+		</script>
+	</body>
+</html>

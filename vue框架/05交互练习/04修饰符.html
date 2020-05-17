@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 
+		修饰符：
+			.enter  回车键
+			.tab 	tab键
+			.delete (捕获“删除”和“退格”键) 删除键
+			.esc 	ESC键
+			.space 	空格
+			.up     说
+			.down    下
+			.left   左
+			.right  右
+			-->
+	</head>
+	<body>
+		<div id="box">
+			<input type="text" @input="input" @keydown.up="up" @keydown.down="down()"/>
+		</div>
+	</body>
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:"#box",
+			data:{
+			},
+			methods:{
+				input(){
+					console.log('input')
+				},
+				up(){
+					console.log('up')
+				},
+				down(){
+					console.log('down')
+				}
+			}
+		})
+	</script>
+</html>

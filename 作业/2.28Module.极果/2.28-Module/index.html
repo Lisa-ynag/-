@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+
+        input {
+            width: 300px;
+            height: 30px;
+            
+        }
+
+        button {
+            height: 33px;
+            width: 70px;
+            background-color: pink;
+            border: none;
+        }
+
+        div {
+            background-image: linear-gradient(to bottom, #2c6195, #4276a6, #6291bb);
+            width: 550px;
+            text-align: center;
+            color: #fff;
+            line-height: 30px;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+            width: 25%;
+        }
+
+        li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        img {
+            height: 50px;
+            width: 70px;
+            margin-top: 20px;
+        }
+
+        li p {
+            height: 40px;
+            line-height: 40px;
+
+            width: auto;
+            display: flex;
+            padding: 20px 30px;
+        }
+
+        li p span {
+            font-size: 40px;
+        }
+
+        li p a {
+            line-height: 20px;
+        }
+
+        li:first-child {
+            width: 40%;
+        }
+
+        li>span {
+
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+
+        .l2 {
+            padding-top: 50px;
+            border-left: 1px solid #598cbb;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="city" value="深圳"><button>查看天气</button>
+    <div>
+        <ul>
+            <li class="l1"></li>
+            <li class="l2"></li>
+            <li class="l2"></li>
+            <li class="l2"></li>
+
+        </ul>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        function getpm(pm) {
+            let ret = '';
+            if (pm >= 0 && pm <= 50) {
+                ret = '优';
+                $('li>span').css({ "background": '#4cce7d' });
+            } else if (pm >= 51 && pm <= 100) {
+                ret = '良';
+                $('li>span').css({ "background": '#ff8000' });
+            }
+            return ret;
+        }
+
+        $('button').click(() => {
+            let city = $('#city').val();
+            let p = Promise.resolve(
+                $.ajax({
+                    url: `http://api.map.baidu.com/telematics/v3/weather?location=${city}&output=json&ak=mx2aGwDCCfoiWinfisVbyXV4TwsviZmf`,
+                    dataType: 'jsonp'
+                })
+            ).then(
+                res => {
+                    console.log(res);
+                    let pm = res.results[0].pm25;
+                    let str = ` 
+                        ${res.results[0].currentCity}
+                        ${res.results[0].weather_data[0].date.slice(0, 10)}</br>
+                        <img src=" ${res.results[0].weather_data[0].dayPictureUrl}"></br>
+                        <p>
+                        <span>${res.results[0].weather_data[0].date.slice(14, 16)}</span>
+                        <a>${res.results[0].weather_data[0].date.slice(16, 17)}
+                        ${res.results[0].weather_data[0].weather}</br>
+                        (${res.results[0].weather_data[0].date.slice(11, 13)}) </a>
+                        </p> 
+                        
+                        ${res.results[0].weather_data[0].temperature}</br>
+                        ${res.results[0].weather_data[0].weather}</br>
+                        ${res.results[0].weather_data[0].wind}</br>
+                        <span>${res.results[0].pm25} ${getpm(pm)}</span>
+                    `
+                    $('div ul .l1').html(str);
+                    for (let i = 1; i < res.results[0].weather_data.length; i++) {
+                        let strs = `
+                        ${res.results[0].weather_data[i].date.slice(0, 2)}</br>
+                        ${res.results[0].weather_data[i].date.slice(2, 10)}</br>
+                        <img src=" ${res.results[0].weather_data[i].dayPictureUrl}"></br>
+                        ${res.results[0].weather_data[i].temperature}</br>
+                        ${res.results[0].weather_data[i].weather}</br>
+                        ${res.results[0].weather_data[i].wind}</br>
+                        <span>${getpm(pm)}</span>
+                    `
+                        $('div ul li').eq(i).html(strs);
+
+                    }
+
+                }
+
+
+            ).catch(
+                err => { console.log(err) }
+
+            )
+
+
+        })
+    </script>
+</body>
+
+</html>

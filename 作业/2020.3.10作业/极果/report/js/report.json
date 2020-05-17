@@ -1,0 +1,116 @@
+{
+    "lists":[
+        {
+            "imgsrc":"bg1.jpg",
+            "pti":"空气净化器里面学问多的惊呆你，你选对了吗？",
+			"txsrc":"tx.jpg",
+			"nicheng":"苏苏",
+			"riqi":"2016-01-25",
+            "xinum":3,
+            "renum":3,
+			"text":"关于格林威特空气净化器还有4篇报告，点击查看"
+
+        },
+		{
+		    "imgsrc":"bg2.jpg",
+		    "pti":"云马智行车 C1小巧清新，简洁流畅的线条为城市骑行增添一抹亮丽色彩",
+			"txsrc":"tx.jpg",
+			"nicheng":"苏苏",
+			"riqi":"2016-01-25",
+		    "xinum":3,
+		    "renum":3,
+			"text":"关于云马智行车 C1还有8篇报告，点击查看"
+		
+		},
+        {
+            "imgsrc":"bg3.jpg",
+            "pti":"怎么骑都不会累的智能自行车：云马 C1试骑体验",
+        	"txsrc":"tx.jpg",
+        	"nicheng":"苏苏",
+        	"riqi":"2016-01-25",
+            "xinum":3,
+            "renum":3,
+        	"text":"关于云马智行车 C1还有8篇报告，点击查看"
+        
+        },
+		{
+		    "imgsrc":"bg4.jpg",
+		    "pti":"声音不是最优秀，但它形音完美结合，足够打动人心",
+			"txsrc":"tx.jpg",
+			"nicheng":"苏苏",
+			"riqi":"2016-01-25",
+		    "xinum":3,
+		    "renum":3,
+			"text":"关于Freeson 智能实木音箱还有17篇报告，点击查看"
+		
+		},
+		{
+		    "imgsrc":"bg5.jpg",
+		    "pti":"内在与颜值并重，MO 智能体质分析仪解开你的身体密码",
+			"txsrc":"tx.jpg",
+			"nicheng":"苏苏",
+			"riqi":"2016-01-25",
+		    "xinum":3,
+		    "renum":3,
+			"text":"关于MO 智能体质分析仪还有17篇报告，点击查看"
+		
+		}
+	],
+	"lists2":[
+	    {
+	        "imgsrc":"bg8.jpg",
+	        "pti":"空气净化器里面学问多的惊呆你，你选对了吗？",
+			"txsrc":"tx.jpg",
+			"nicheng":"苏苏",
+			"riqi":"2016-01-25",
+	        "xinum":3,
+	        "renum":3,
+			"text":"关于格林威特空气净化器还有4篇报告，点击查看"
+	
+	    },
+		{
+		    "imgsrc":"bg7.jpg",
+		    "pti":"云马智行车 C1小巧清新，简洁流畅的线条为城市骑行增添一抹亮丽色彩",
+			"txsrc":"tx.jpg",
+			"nicheng":"苏苏",
+			"riqi":"2016-01-25",
+		    "xinum":3,
+		    "renum":3,
+			"text":"关于云马智行车 C1还有8篇报告，点击查看"
+		
+		},
+	    {
+	        "imgsrc":"bg6.jpg",
+	        "pti":"怎么骑都不会累的智能自行车：云马 C1试骑体验",
+	    	"txsrc":"tx.jpg",
+	    	"nicheng":"苏苏",
+	    	"riqi":"2016-01-25",
+	        "xinum":3,
+	        "renum":3,
+	    	"text":"关于云马智行车 C1还有8篇报告，点击查看"
+	    
+	    },
+		{
+		    "imgsrc":"bg4.jpg",
+		    "pti":"声音不是最优秀，但它形音完美结合，足够打动人心",
+			"txsrc":"tx.jpg",
+			"nicheng":"苏苏",
+			"riqi":"2016-01-25",
+		    "xinum":3,
+		    "renum":3,
+			"text":"关于Freeson 智能实木音箱还有17篇报告，点击查看"
+		
+		},
+		{
+		    "imgsrc":"bg5.jpg",
+		    "pti":"内在与颜值并重，MO 智能体质分析仪解开你的身体密码",
+			"txsrc":"tx.jpg",
+			"nicheng":"苏苏",
+			"riqi":"2016-01-25",
+		    "xinum":3,
+		    "renum":3,
+			"text":"关于MO 智能体质分析仪还有17篇报告，点击查看"
+		
+		}
+	]
+}

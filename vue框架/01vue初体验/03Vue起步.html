@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 第一步，引入vue.js -->
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 第二步，创建视图层view -->
+		<div id="box">
+			<h1>Vue的初体验</h1>
+			<p>
+				<!-- 第四步：使用数据 将变量放到{{}}}里面 -->
+				{{msg}}
+			</p>
+		</div>
+		<script type="text/javascript">
+			// 第三步：初始化一个vue示例对象
+			let vm = new Vue({
+				el:'#box',
+				//存数据的
+				data:{
+					msg:'hello world'
+				}
+			})
+		</script>
+	</body>
+</html>

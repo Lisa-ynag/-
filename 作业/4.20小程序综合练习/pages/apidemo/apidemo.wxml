@@ -1,0 +1,26 @@
+<!-- 获取位置 -->
+<button class="btn" bindtap="ongetLocation">获取位置</button>
+<!-- 查看位置 -->
+<button class="btn" bindtap="onopenLocation">查看位置</button>
+<!-- 获取用户信息 -->
+<button class="btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">获取当前用户信息</button>
+<!-- 打电话 -->
+<button class="btn" bindtap="onmakePhoneCall">拨打电话</button>
+<!-- 震动 -->
+<button class="btn" bindtap="onvibrateLong">震动</button>
+<!-- 15ms震动 -->
+<button class="btn" bindtap="onvibrateShort">15ms震动</button>
+<!-- 获取发票抬头 -->
+<button class="btn" bindtap="onchooseInvoiceTitle">获取发票抬头</button>
+<!-- 监听截屏 -->
+<button class="btn" bindtap="ononUserCaptureScreen">监听截屏</button>
+<!-- 扫一扫 -->
+<button class="btn" bindtap="onscanCode">扫一扫</button>
+<!-- 跳转 -->
+<button bindtap="onswitchTab" type="warn">跳转switchTab</button>
+<!-- 摇一摇 -->
+<image src="{{imgs[curindex]}}"></image>
+
+
+
+

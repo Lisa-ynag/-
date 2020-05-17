@@ -1,0 +1,1 @@
+export let number1 = 10;

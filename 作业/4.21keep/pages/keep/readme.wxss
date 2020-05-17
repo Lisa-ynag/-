@@ -1,0 +1,11 @@
+/* pages/keep/readme.wxss */
+.title{
+  font-size: 22px;
+  color: red;
+}
+.text{
+  margin-bottom: 20rpx;
+}
+.page-section-spacing{
+  margin-top: 20rpx;
+}

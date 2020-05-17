@@ -1,0 +1,12 @@
+/* pages/keep/index.wxss */
+.box{
+  text-align: center;
+}
+.box .kepImg{
+  width: 100%;
+  margin: 10rpx 0;
+}
+.box .time{
+  width: 40rpx;
+  height: 40rpx;
+}

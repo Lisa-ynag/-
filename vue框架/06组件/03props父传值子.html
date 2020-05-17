@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 父组件传值给子组件。子组件通过props接收内容
+			props：用于声明要获取的数据
+			语法：template:'#id',
+				props:['args1','args2'...]
+			父调用子组件是，就行传值
+			<demo args1=''></demo>
+		 -->
+		<div id="box">
+			<demo ctitle="首页" src1='img/1.png'></demo>
+			<demo ctitle="详情" src2='img/2.png'></demo>
+			<demo ctitle="我的"></demo>
+		</div>
+		<!-- <img src="img/1.png" > -->
+		<template id="myT">
+			<div>
+				<h1>{{ctitle}}</h1>
+				<img :src="src1" >
+				<img :src="src2" >
+			</div>
+		</template>
+	</body>
+	<script>
+		let vm = new Vue({
+			el:"#box",
+			components:{
+				'demo':{
+					template:'#myT',
+					props:['ctitle','src1','src2']
+				}
+			}
+		})
+	</script>
+</html>

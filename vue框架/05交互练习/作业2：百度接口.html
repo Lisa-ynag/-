@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#box{
+				width: 900px;
+				margin: 200px auto;
+				border: 1px solid #4e6ef2;
+			}
+			.searchbox{
+				overflow: hidden;
+				border: 1px solid #4e6ef2;
+			}
+			.searchbox input{
+				float: left;
+				height: 50px;
+				border: none;	
+			}
+			.searchbox input[type=text]{
+				width:75%;
+			}
+			.searchbox input[type=button]{
+				width: 25%;
+				background-color: #4e6ef2;
+				color: #fff;
+			}
+			.list{
+				width: 100%;
+				border: 1px solid #ccc;
+				border-top: none;
+			}
+			.list li{
+				line-height: 40px;
+				list-style: none;
+			}
+			.list .active{
+				background-color:#4e6ef2;
+				color: #fff;
+			}
+		</style>
+		<script src="js/vue.js"></script>
+		<script src="js/vue-resource.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<div class="searchbox">
+				<input type="text" @input="search" v-model="value" @keydown.up="up" @keydown.down="down"/>
+				<input type="button" value="百度一下" />
+				<ul class="list">
+					<li v-for="(item,index) in arr" :class="{active:index==currIndex}">
+						{{item}}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script>
+		let vm = new Vue({
+			el:"#box",
+			data:{
+				value:'',
+				arr:[],
+				currIndex:0
+			},
+			methods:{
+				search(){
+					console.log('search',this.value);
+					this.$http.jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",{
+						params:{
+							wd:this.value
+						},
+						jsonp:'cb'
+					})
+					.then(res=>{
+						console.log(res)
+						this.arr= res.data.s;
+					})
+				},
+				down(){
+					this.currIndex ++;
+					if(this.currIndex>this.arr.length-1){
+						this.currIndex = 0 ;
+					}
+					this.value = this.arr[this.currIndex];
+				},
+				up(){
+					this.currIndex --;
+					if(this.currIndex<0){
+						this.currIndex = this.arr.length-1 ;
+					}
+					this.value = this.arr[this.currIndex];
+				}
+			}
+		})
+	</script>
+</html>

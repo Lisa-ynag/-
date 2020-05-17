@@ -1,0 +1,16 @@
+<!--pages/demo3/demo3.wxml-->
+<!-- 轮播图swiper -->
+<swiper indicator-dots="true" indicator-color="#fff" indicator-active-color="#07c160" autoplay="true" interval="3000" >
+ <swiper-item class="box">
+      <image src="../../images/1.jpg" mode="aspectFit" class="boxchid"></image>
+ </swiper-item>
+ <swiper-item class="box">
+      <image src="../../images/2.jpg" mode="aspectFit" class="boxchid"></image>
+ </swiper-item>
+ <swiper-item class="box">
+      <image src="../../images/3.jpg" mode="aspectFit" class="boxchid"></image>
+ </swiper-item>
+ <swiper-item class="box">
+      <image src="../../images/4.jpg" mode="aspectFit" class="boxchid"></image>
+ </swiper-item>
+</swiper>

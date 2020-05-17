@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" value="小米电视" />小米电视<br>
+		<input type="checkbox" value="iphone手机" />iphone手机<br>
+		<input type="checkbox" value="洗衣机" />洗衣机<br>
+		<input type="checkbox" value="美的空调" />美的空调<br>
+		<!-- 需求：同时打开了三个当前页面，操作任意一个页面 其它页面选中状态要相同 -->
+		<script type="text/javascript">
+			let inputs = document.querySelectorAll('input');//得到4个 input
+			let storagesarr = new Array(inputs.length);//0
+			
+			/* 小米电视 */
+			/* 当选中复选框或者取消选中，对应的要更新localstorage中的数据。 */
+			
+			for(let i=0;i<inputs.length;i++){
+				inputs[i].onclick = function(){
+					//判断当前复选框是否选中
+					if(this.checked){
+						storagesarr[i] = this.value;
+					}else{
+						storagesarr[i] = '';
+					}
+					console.log(this,storagesarr);
+					//会往localstorage中存字符串，包含了4个产品的状态
+					window.localStorage.setItem('gwc',storagesarr.join());
+				}
+			}
+			window.addEventListener('storage',function(e){
+				/*同时打开A B C
+				 A操作 BC触发storage
+				 B操作 AC触发storage
+				 C操作 AB触发storage
+				 当内容发生改变
+				 重新渲染页面中checkebox的选中状态
+				 */
+				if(e.key=='gwc'){
+					console.log(e.newValue)//小米电视，，，
+					let arr = e.newValue.split(',');//['小米电视','','',']
+					storagesarr = arr;
+					for(let i = 0; i<inputs.length;i++){
+						if(arr[i]==inputs[i].value){
+							inputs[i].checked = true;
+						}else{
+							inputs[i].checked = false;
+						}
+						//inputs[i].checked = (arr[i] == inputs[i].value);
+					}
+				}
+			},false)
+		</script>
+	</body>
+</html>

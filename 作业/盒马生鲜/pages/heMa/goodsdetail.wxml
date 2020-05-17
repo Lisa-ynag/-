@@ -1,0 +1,8 @@
+
+<view class="detailbox">
+	<view class="imgbox"><image src="{{allgoodsDetail.image}}" class="listimg"></image></view>
+	<view>{{allgoodsDetail.name}}</view>
+  <view class="price">{{allgoodsDetail.price}}/<text>{{allgoodsDetail.unit}}</text></view>
+  <view>商品详情：{{allgoodsDetail.message}}</view>
+ 
+</view>

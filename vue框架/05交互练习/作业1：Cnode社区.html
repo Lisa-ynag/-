@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			li {
+				list-style: none;
+				border-bottom: 1px solid #ccc;
+			}
+
+			p {
+				position: relative;
+			}
+
+			span {
+				margin: 20px;
+			}
+
+			.time {
+				position: absolute;
+				right: 10px;
+			}
+			.imgid{
+				width: 30px;
+				height: 30px;
+			}
+		</style>
+		<script src="js/vue.js"></script>
+		<script src="js/axios.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/loading.jpg" v-show="isShow">
+			<ul>
+				<li v-for="item in datas">
+					<p>
+						<img :src="item.author.avatar_url" class="imgid">
+						<span class="left">{{item.reply_count}}/{{item.visit_count}}</span>
+						{{item.title}}
+						<span class="time">{{item.last_reply_at | fmtDate | fmtDatetow}} </span>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		let vm = new Vue({
+			el: "#box",
+			data: {
+				datas: [],
+				isShow: true,
+			},
+			filters: {
+				fmtDate: function(val) {
+					return val.replace('T',' ');
+				},
+				fmtDatetow: function(val) {
+					return val.slice(0,19);
+				}
+			},
+			mounted: function() {
+				axios.get('https://cnodejs.org/api/v1/topics')
+					.then(res => {
+						this.isShow = false;
+						console.log(res.data.data);
+						this.datas = res.data.data;
+					})
+					.catch(err => {
+						console.log(err)
+					})
+			},
+		})
+	</script>
+</html>

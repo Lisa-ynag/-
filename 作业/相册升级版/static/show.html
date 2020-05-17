@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width: 200px;
+				height: 200px;
+			}
+			h2{
+				color: pink;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<h2>查看所有图片</h2>
+		选择相册：<select name="album" id="album"></select>
+		<button type="button" onclick="show()">查看图片</button>
+		<div id="box">
+			
+		</div>
+		<script src="jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//页面加载时异步请求所有相册的内容
+			$.ajax({
+				url:"http://localhost:3000/showallalbum",
+				dataType:"json",
+				success:function(res){
+					console.log(res) 
+					let str =``;
+					for(let i=0;i<res.album.length;i++){
+						str+=`<option value="${res.album[i]}">${res.album[i]}</option>`
+					}
+					$("#album").append(str);
+				}
+			})
+			function show(){
+				$("#box").html('');
+				let albumname = $("#album").val();
+				//异步请求服务器的数据
+				$.ajax({
+					url:"http://localhost:3000/showImages?album="+albumname,
+					dataType:'json',
+					success:function(res){
+						console.log(res)
+						let str = '';
+						for(let i=0;i<res.imagearr.length;i++){
+							str +=`<img src="${albumname}/${res.imagearr[i]}" >`
+						}
+						$("#box").html(str);
+					}
+				})
+			}
+			
+			
+		</script>
+	</body>
+</html>

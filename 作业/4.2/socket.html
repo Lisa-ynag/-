@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>即时通讯</h1>
+		<input type="text" id="msg" />
+		<button id="btn" onclick="sendMsg()">发送</button>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		  var socket = io('http://localhost:8000');
+		  function sendMsg(){
+			  
+			  let msg = document.querySelector("#msg").value;
+			  socket.emit('ask', msg);
+		  }
+		  socket.on('back', function(data){
+			 
+			  console.log("socket.html:",data)
+		  });
+		 
+		</script> 
+	</body>
+</html>
